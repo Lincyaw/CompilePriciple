@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/llincyaw/Desktop/CompilerLesson/main.cpp
+iostream
+-
+map
+-
+string
+-
+typeinfo
+-
+fstream
+-
+vector
+-
+
