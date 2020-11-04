@@ -8,12 +8,16 @@
 using namespace std;
 
 #define IS_BLANK(x) x==' '?true:false
-
-typedef struct SYSTABLE {
-    string name;
-    string tpye;
+#define ID 83
+class SYSTABLE {
+public:
+    SYSTABLE(string type="-1", string address="?"){
+        this->address = address;
+        this->type = type;
+    }
+    string type;
     string address;
-} ST;
+};
 
 map<string, int> charMap;
 
@@ -111,9 +115,11 @@ void initMap() {
     charMap[">>"] = 76;
     charMap[">>="] = 77;
     charMap["\""] = 78;
-    charMap["/*注释*/"] = 79;
-    charMap["常数"] = 80;
-    charMap["标识符 "] = 81;
+    charMap["\'"] = 79;
+    charMap["#"] = 80;
+    charMap["/*注释*/"] = 81;
+    charMap["常数"] = 82;
+    charMap["标识符 "] = ID;
 }
 
 bool getNext(char &ch, string::size_type &pos, const string &program) {
@@ -190,7 +196,7 @@ pair<int, string> scanner(const string &program, string::size_type &pos) {
             case '!': // ! 操作符
                 token += ch;
                 if (getNext(ch, pos, program)) {
-                    if (ch == '=') // -- 操作符
+                    if (ch == '=')
                     {
                         token += ch;
                         getNext(ch, pos, program);
@@ -204,7 +210,7 @@ pair<int, string> scanner(const string &program, string::size_type &pos) {
             case '%': // % 操作符
                 token += ch;
                 if (getNext(ch, pos, program)) {
-                    if (ch == '=') // -- 操作符
+                    if (ch == '=')
                     {
                         token += ch;
                         getNext(ch, pos, program);
@@ -218,7 +224,7 @@ pair<int, string> scanner(const string &program, string::size_type &pos) {
             case '*':
                 token += ch;
                 if (getNext(ch, pos, program)) {
-                    if (ch == '=') // -- 操作符
+                    if (ch == '=')
                     {
                         token += ch;
                         getNext(ch, pos, program);
@@ -232,7 +238,7 @@ pair<int, string> scanner(const string &program, string::size_type &pos) {
             case '^':
                 token += ch;
                 if (getNext(ch, pos, program)) {
-                    if (ch == '=') // -- 操作符
+                    if (ch == '=')
                     {
                         token += ch;
                         getNext(ch, pos, program);
@@ -246,7 +252,7 @@ pair<int, string> scanner(const string &program, string::size_type &pos) {
             case '=':
                 token += ch;
                 if (getNext(ch, pos, program)) {
-                    if (ch == '=') // !% %= 操作符
+                    if (ch == '=')
                     {
                         token += ch;
                         getNext(ch, pos, program);
@@ -258,10 +264,10 @@ pair<int, string> scanner(const string &program, string::size_type &pos) {
                 }
                 break;
 
-            case '/': // / 操作符
+            case '/':
                 token += ch;
                 if (getNext(ch, pos, program)) {
-                    if (ch == '=') // -- 操作符
+                    if (ch == '=')
                     {
                         token += ch;
                         getNext(ch, pos, program);
@@ -455,6 +461,17 @@ pair<int, string> scanner(const string &program, string::size_type &pos) {
                     idx = cit->second;
                 }
                 break;
+            case '\\':    // 转移符
+                token += ch;
+                if (getNext(ch, pos, program)) {
+                    token += ch;
+                    getNext(ch, pos, program);
+                }
+                cit = charMap.find(token);
+                if (cit != charMap.end()) {
+                    idx = cit->second;
+                }
+                break;
             case '"':
                 token += ch;
                 getNext(ch, pos, program);
@@ -463,14 +480,31 @@ pair<int, string> scanner(const string &program, string::size_type &pos) {
                     idx = cit->second;
                 }
                 break;
+            case '\'':
+                token += ch;
+                getNext(ch, pos, program);
+                cit = charMap.find(token);
+                if (cit != charMap.end()) {
+                    idx = cit->second;
+                }
+                break;
+            case '#':
+                token += ch;
+                getNext(ch, pos, program);
+                cit = charMap.find(token);
+                if (cit != charMap.end()) {
+                    idx = cit->second;
+                }
+                break;
             case '\n':
-                token += "换行";
+                token += "nextLine";
                 pos++;
                 ch = program[pos];
                 idx = -2;
                 break;
+
             default:
-                token += "error";
+                token += "Error: Not defined";
                 pos++;
                 ch = program[pos];
                 idx = -1;
@@ -485,16 +519,20 @@ pair<int, string> scanner(const string &program, string::size_type &pos) {
 
 int main() {
     string program;
+    ofstream tokenOut("token.txt");
+    ofstream sysOut("symbol.txt");
+
     read_program("../program.txt", program);
     string::size_type pos = 0;
     int row = 1;
     vector<pair<int, string>> sysTable;
+    map<string,SYSTABLE> sysMap;
     initMap();
     int no = 0;
-
+    SYSTABLE g("fuck");
+//    cout<<g.name<<" "<<g.type<<" "<<g.address<<endl;
     do {
         auto tu = scanner(program, pos);
-
         switch (tu.first) {
             case -1:   // error;
                 no++;
@@ -507,11 +545,19 @@ int main() {
                 break;
             default:
                 no++;
-                cout << no << ": ";
-                cout << '(' << tu.first << "," << tu.second << ')' << endl;
+//                cout << no << ": ";
+                tokenOut << '(' << tu.first << "," << tu.second << ')' << endl;
+                if(tu.first==ID){
+                    sysMap[tu.second] = SYSTABLE();
+                }
                 sysTable.push_back(tu);
                 break;
         }
     } while (pos < program.size());
+    tokenOut.close();
+    for(auto i:sysMap){
+        sysOut<<"("<<i.first<<", "<<i.second.type<<", "<<i.second.address<<")"<<endl;
+    }
+    sysOut.close();
     return 0;
 }
