@@ -519,8 +519,8 @@ pair<int, string> scanner(const string &program, string::size_type &pos) {
 
 int main() {
     string program;
-    ofstream tokenOut("token.txt");
-    ofstream sysOut("symbol.txt");
+    ofstream tokenOut("../token.txt");
+    ofstream sysOut("../symbol.txt");
 
     read_program("../program.txt", program);
     string::size_type pos = 0;
