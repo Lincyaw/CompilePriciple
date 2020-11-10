@@ -92,7 +92,7 @@ void initMap() {
     charMap[";"] = 53;
     charMap["?"] = 54;
     charMap["["] = 55;
-    charMap["]="] = 56;
+    charMap["]"] = 56;
     charMap["^"] = 57;
     charMap["^="] = 58;
     charMap["{"] = 59;
