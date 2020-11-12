@@ -1,6 +1,9 @@
 #include <stdio.h>
 void bubble_sort(int a[], int n);
 int number[10000000];
+int a = 0x123FF;
+int b = 1234.123;
+int c = 0123.123;
 void bubble_sort(int a[], int n)
 {
     int i,j,temp;

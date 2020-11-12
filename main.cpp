@@ -8,13 +8,15 @@
 using namespace std;
 
 #define IS_BLANK(x) x==' '?true:false
-#define ID 83
-class SYSTABLE {
+#define ID 85
+
+class systable {
 public:
-    SYSTABLE(string type="-1", string address="?"){
+    explicit systable(string type = "-1", string address = "?") {
         this->address = address;
         this->type = type;
     }
+
     string type;
     string address;
 };
@@ -119,6 +121,8 @@ void initMap() {
     charMap["#"] = 80;
     charMap["/*注释*/"] = 81;
     charMap["常数"] = 82;
+    charMap["8进制"] = 83;
+    charMap["16进制"] = 84;
     charMap["标识符 "] = ID;
 }
 
@@ -160,13 +164,37 @@ pair<int, string> scanner(const string &program, string::size_type &pos) {
         }
     } else if ((ch >= '0' && ch <= '9') || ch == '.') // 识别常数
     {
-        while (ch >= '0' && ch <= '9' || ch == '.') {
+        if (ch == '0') { //8进制或16进制
             token += ch;
-            if (!getNext(ch, pos, program)) {
-                break;
+            getNext(ch, pos, program);
+            if (ch == 'x' || ch=='X') {   // 16进制
+                token += ch;
+                getNext(ch, pos, program);
+                while (ch >= '0' && ch <= '9' || ch >= 'A' && ch <= 'F'|| ch == '.') {
+                    token += ch;
+                    if (!getNext(ch, pos, program)) {
+                        break;
+                    }
+                }
+                idx = (int) charMap.size()-1;
+            } else {
+                while (ch >= '0' && ch <= '7'|| ch == '.') {  // 8进制
+                    token += ch;
+                    if (!getNext(ch, pos, program)) {
+                        break;
+                    }
+                }
+                idx = (int) charMap.size()-2;
             }
+        } else {
+            while (ch >= '0' && ch <= '9' || ch == '.') {
+                token += ch;
+                if (!getNext(ch, pos, program)) {
+                    break;
+                }
+            }
+            idx = (int) charMap.size() - 3;  // 常数位于编码表达倒数第二位
         }
-        idx = (int) charMap.size() - 1;  // 常数位于编码表达倒数第二位
         int dot_num = 0;
         for (string::size_type i = 0; i != token.size(); i++) {
             if (token[i] == '.') {
@@ -196,8 +224,7 @@ pair<int, string> scanner(const string &program, string::size_type &pos) {
             case '!': // ! 操作符
                 token += ch;
                 if (getNext(ch, pos, program)) {
-                    if (ch == '=')
-                    {
+                    if (ch == '=') {
                         token += ch;
                         getNext(ch, pos, program);
                     }
@@ -210,8 +237,7 @@ pair<int, string> scanner(const string &program, string::size_type &pos) {
             case '%': // % 操作符
                 token += ch;
                 if (getNext(ch, pos, program)) {
-                    if (ch == '=')
-                    {
+                    if (ch == '=') {
                         token += ch;
                         getNext(ch, pos, program);
                     }
@@ -224,8 +250,7 @@ pair<int, string> scanner(const string &program, string::size_type &pos) {
             case '*':
                 token += ch;
                 if (getNext(ch, pos, program)) {
-                    if (ch == '=')
-                    {
+                    if (ch == '=') {
                         token += ch;
                         getNext(ch, pos, program);
                     }
@@ -238,8 +263,7 @@ pair<int, string> scanner(const string &program, string::size_type &pos) {
             case '^':
                 token += ch;
                 if (getNext(ch, pos, program)) {
-                    if (ch == '=')
-                    {
+                    if (ch == '=') {
                         token += ch;
                         getNext(ch, pos, program);
                     }
@@ -252,8 +276,7 @@ pair<int, string> scanner(const string &program, string::size_type &pos) {
             case '=':
                 token += ch;
                 if (getNext(ch, pos, program)) {
-                    if (ch == '=')
-                    {
+                    if (ch == '=') {
                         token += ch;
                         getNext(ch, pos, program);
                     }
@@ -267,8 +290,7 @@ pair<int, string> scanner(const string &program, string::size_type &pos) {
             case '/':
                 token += ch;
                 if (getNext(ch, pos, program)) {
-                    if (ch == '=')
-                    {
+                    if (ch == '=') {
                         token += ch;
                         getNext(ch, pos, program);
                     }
@@ -526,10 +548,10 @@ int main() {
     string::size_type pos = 0;
     int row = 1;
     vector<pair<int, string>> sysTable;
-    map<string,SYSTABLE> sysMap;
+    map<string, systable> sysMap;
     initMap();
     int no = 0;
-    SYSTABLE g("fuck");
+    systable g("fuck");
 //    cout<<g.name<<" "<<g.type<<" "<<g.address<<endl;
     do {
         auto tu = scanner(program, pos);
@@ -547,16 +569,16 @@ int main() {
                 no++;
 //                cout << no << ": ";
                 tokenOut << '(' << tu.first << "," << tu.second << ')' << endl;
-                if(tu.first==ID){
-                    sysMap[tu.second] = SYSTABLE();
+                if (tu.first == ID) {
+                    sysMap[tu.second] = systable();
                 }
                 sysTable.push_back(tu);
                 break;
         }
     } while (pos < program.size());
     tokenOut.close();
-    for(auto i:sysMap){
-        sysOut<<"("<<i.first<<", "<<i.second.type<<", "<<i.second.address<<")"<<endl;
+    for (auto i:sysMap) {
+        sysOut << "(" << i.first << ", " << i.second.type << ", " << i.second.address << ")" << endl;
     }
     sysOut.close();
     return 0;
