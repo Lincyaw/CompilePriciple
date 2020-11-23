@@ -23,7 +23,7 @@ void Grammar_Analyzer::initActionMap() {
     }
 }
 void Grammar_Analyzer::initGotoMap() {
-    ifstream fp("../input.txt"); //定义声明一个ifstream对象，指定文件路径
+    ifstream fp("../testinput.txt"); //定义声明一个ifstream对象，指定文件路径
     string line;
     while (getline(fp, line)) { //循环读取每行数据
         vector<int> temp;
@@ -40,6 +40,7 @@ void Grammar_Analyzer::initGotoMap() {
         gotoMap.push_back(temp);
     }
 }
+// LR1分析文法
 void Grammar_Analyzer::LR1(string Input) {
     stateStack.push_back(0);
     symbolStack.push_back('#');
@@ -81,13 +82,14 @@ pair<char, int> Grammar_Analyzer::parseState(const string &action) {
         exit(1);
     }
     if (action.size() == 1) {
-        return pair<char, int>('e', action[0]);
+        return {'e', action[0]};
     }
-    return pair<char, int>(action[0], action[1]);
+    return {action[0], action[1]};
 }
 
 void Grammar_Analyzer::initProducer() {
-
+    //TODO
+    // 产生式的初始化
 }
 
 
