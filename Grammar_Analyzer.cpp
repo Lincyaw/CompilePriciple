@@ -56,6 +56,7 @@ void Grammar_Analyzer::LR1(vector<pair<int, string>> Input) {
     // 输入的字符串的第一个字符
     pair<int, string> a = Input[pointer];
     while (a.second != "#") {
+        // TODO: 如果a.fisrt 类型是标识符，则要把action.second变成语法分析表里有的.常数同理
         auto action = parseState(actionMap[S][index[a.second]]);
         if (action.first == "s") {
             stateStack.push_back(atoi(action.second.c_str()));
