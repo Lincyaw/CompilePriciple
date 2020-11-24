@@ -23,7 +23,7 @@ public:
     vector<vector<string>> actionMap;
     //转移表
     vector<vector<int>> gotoMap;  // 只有状态转移
-    void LR1(string Input);
+    void LR1(vector<pair<int, string>> Input);
     //解析动作，例如s1,解析为（s，1）
     static pair<char,int> parseState(const string& action);
 

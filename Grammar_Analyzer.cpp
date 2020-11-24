@@ -41,13 +41,17 @@ void Grammar_Analyzer::initGotoMap() {
     }
 }
 // LR1分析文法
-void Grammar_Analyzer::LR1(string Input) {
+void Grammar_Analyzer::LR1(vector<pair<int, string>> Input) {
+    // 初始化状态栈和符号栈,以及输入的句子
     stateStack.push_back(0);
     symbolStack.push_back('#');
     input = std::move(Input);
-    input.push_back('#');
+    Input.push_back('#');
+
     pointer = 0;
-    auto S = stateStack.back();
+    // 栈顶符号
+    int S = stateStack.back();
+    // 输入的字符串的第一个字符
     auto a = input[pointer];
     while (a != '#') {
         auto action = parseState(actionMap[S][a]);

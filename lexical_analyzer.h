@@ -21,6 +21,11 @@ public:
 
 class Lexical_analyzer {
 public:
+    // token串存放的数据结构
+    vector<pair<int, string>> sysTable;
+    // 符号表
+    map<string, systable> sysMap;
+
     void read_program(const char *file, string &prog);
 
     void initMap();

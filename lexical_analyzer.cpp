@@ -523,12 +523,9 @@ void Lexical_analyzer::lexical() {
     read_program("../program.txt", program);
     string::size_type pos = 0;
     int row = 1;
-    vector<pair<int, string>> sysTable;
-    map<string, systable> sysMap;
+
     initMap();
     int no = 0;
-    systable g("fuck");
-//    cout<<g.name<<" "<<g.type<<" "<<g.address<<endl;
     do {
         auto tu = scanner(program, pos);
         switch (tu.first) {
