@@ -12,5 +12,6 @@
 #include <vector>
 #include <sstream>
 #include <stdlib.h>
+#include "dbg.h"
 using namespace std;
 #endif //COMPILE_MYHEAD_H
