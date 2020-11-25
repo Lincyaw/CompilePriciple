@@ -6,11 +6,12 @@ int main() {
     Lexical_analyzer lex;
     lex.lexical();
     Grammar_Analyzer gra;
-    gra.initGotoMap();
-    gra.initActionMap();
-    gra.initIndex();
     dbg(lex.sysTable);
+//    for(auto i:gra.index){
+//        cout<<i.first<<"  "<<i.second<<endl;
+//    }
     gra.LR1(lex.sysTable);
+    cout<<"finished"<<endl;
 
     return 0;
 }

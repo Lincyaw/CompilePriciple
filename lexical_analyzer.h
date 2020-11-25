@@ -5,8 +5,7 @@
 #ifndef COMPILE_LEXICAL_ANALYZER_H
 #define COMPILE_LEXICAL_ANALYZER_H
 #include "myhead.h"
-#define IS_BLANK(x) x==' '?true:false
-#define ID 85
+
 using namespace std;
 
 class systable {

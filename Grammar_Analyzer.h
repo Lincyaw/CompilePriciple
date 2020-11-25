@@ -9,7 +9,9 @@
 
 class Grammar_Analyzer {
 public:
-    map<string,int> index;
+    Grammar_Analyzer();
+    map<string, int> index;
+    map<string, int> NoEndIndex;
 //    //输入的句子
 //    string input;
     //句子指针
@@ -25,19 +27,27 @@ public:
     //转移表
     vector<vector<int>> gotoMap;  // 只有状态转移
     void LR1(vector<pair<int, string>> Input);
+
     //解析动作，例如s1,解析为（s，1）
-    static pair<string ,string> parseState(const string& action);
+    static pair<string, string> parseState(const string &action);
 
     void initGotoMap();
 
     void initActionMap();
 
-    pair<string,string> parseProducer(const string& input);
+    pair<string, vector<string>> parseProducer(const string &input);
 
     void initIndex();
+    void initNotEndIndex();
 };
 
 void testModules();
+
 void testParseState();
+
 void testParseProducer();
+
+void testInitIndex();
+
+void trim();
 #endif //COMPILE_GRAMMAR_ANALYZER_H
