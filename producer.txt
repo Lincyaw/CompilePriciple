@@ -1,0 +1,72 @@
+type -> int 
+S' -> type token 
+C -> S' 
+B -> constV 
+A -> B 
+S -> A 
+S' -> token = S 
+C -> C # S' 
+type -> int 
+B -> constV 
+A -> B 
+S -> A 
+S' -> type token = S 
+C -> C # S' 
+type -> int 
+S' -> type token 
+C -> C # S' 
+type -> int 
+list -> token 
+list -> token , list 
+list -> token , list 
+type -> int 
+B -> constV 
+A -> B 
+S -> A 
+S' -> type token = S 
+C -> S' 
+type -> int 
+B -> constV 
+A -> B 
+S -> A 
+S' -> type token = S 
+B -> token 
+A -> B 
+S -> A 
+comOp -> < 
+B -> constV 
+A -> B 
+S -> S comOp A 
+B -> token 
+A -> B 
+A -> A ++ 
+B -> token 
+A -> B 
+S -> A 
+B -> constV 
+A -> B 
+S -> S + A 
+S' -> token = S 
+C -> S' 
+S' -> for ( S' , S , A ) { C } 
+C -> C # S' 
+B -> token 
+A -> B 
+A -> A ++ 
+S -> A 
+S' -> token = S 
+C -> C # S' 
+S' -> type token ( list ) { C } 
+C -> C # S' 
+list -> token 
+list -> token , list 
+list -> token , list 
+S' -> token ( list ) 
+C -> C # S' 
+B -> token 
+A -> B 
+B -> constV 
+A -> A / B 
+S -> A 
+S' -> token = S 
+C -> C # S' 

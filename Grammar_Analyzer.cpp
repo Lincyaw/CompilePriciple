@@ -49,17 +49,17 @@ void Grammar_Analyzer::LR1(vector<pair<int, string>> Input) {
     stateStack.push_back(0);
     symbolStack.emplace_back("$");
     Input.emplace_back(-5, "$");
-
+    ofstream producerOut("../producer.txt");
     pointer = 0;
     // 栈顶符号
     int S;
     // 输入的字符串的第一个字符
     pair<int, string> a = Input[pointer];
 
-    dbg(actionMap, gotoMap);
+//    dbg(actionMap, gotoMap);
     while (!symbolStack.empty()) {
-        dbg("round------------------------------------------------------");
-        dbg(a);
+//        dbg("round------------------------------------------------------");
+//        dbg(a);
         S = stateStack.back();
         switch (a.first) {
             case ID:
@@ -74,14 +74,14 @@ void Grammar_Analyzer::LR1(vector<pair<int, string>> Input) {
         }
         // TODO: 如果a.fisrt 类型是标识符，则要把action.second变成语法分析表里有的.常数同理
 
-        dbg(symbolStack, stateStack);
-        dbg(a);
-        dbg(S);
-        dbg(index[a.second]);
+//        dbg(symbolStack, stateStack);
+//        dbg(a);
+//        dbg(S);
+//        dbg(index[a.second]);
 
         // ? token 被跳过了
         auto LookAction = actionMap[S][index[a.second]];
-        dbg(LookAction);
+//        dbg(LookAction);
         auto action = parseState(actionMap[S][index[a.second]]);
 
 
@@ -104,22 +104,22 @@ void Grammar_Analyzer::LR1(vector<pair<int, string>> Input) {
             symbolStack.push_back(producer.first); // 左部产生式只有一个字符
             stateStack.push_back(gotoMap[S1][NoEndIndex[producer.first]]);
 
-            cout<<producer.first<<" -> ";
+            producerOut<<producer.first<<" -> ";
             for(int i = 0;i<producer.second.size();i++){
-                cout<<producer.second[i]<<" ";
+                producerOut<<producer.second[i]<<" ";
             }
-            cout<<endl;
+            producerOut<<endl;
 
-            dbg(S1);
-            dbg(producer.first);
-            dbg(producer.second);
-            dbg(NoEndIndex[producer.first]);
+//            dbg(S1);
+//            dbg(producer.first);
+//            dbg(producer.second);
+//            dbg(NoEndIndex[producer.first]);
         } else if (LookAction=="accept") {
             return;
         } else {
             exit(2);
         }
-        dbg(symbolStack, stateStack);
+//        dbg(symbolStack, stateStack);
 
     }
 
@@ -217,7 +217,7 @@ void Grammar_Analyzer::initIndex() {
         }
         index[token] = count;
     }
-    dbg(index);
+//    dbg(index);
 }
 
 
@@ -256,7 +256,7 @@ void testModules() {
 
 void testInitIndex() {
     Grammar_Analyzer test;
-    dbg(test.index);
+//    dbg(test.index);
 }
 
 void testParseState() {
@@ -265,18 +265,18 @@ void testParseState() {
     auto b = test.parseState("  shift 14");
     auto c = test.parseState("reduce A -> B");
     auto d = test.parseState("reduce A -> C to b ");
-    dbg(a);
-    dbg(b);
-    dbg(c);
-    dbg(d);
-        dbg(test.parseProducer(a.second).first);
-    dbg(test.parseProducer(b.second).first);
-    dbg(test.parseProducer(c.second).first);
-    dbg(test.parseProducer(d.second).first);
-    dbg(test.parseProducer(a.second).second);
-    dbg(test.parseProducer(b.second).second);
-    dbg(test.parseProducer(c.second).second);
-    dbg(test.parseProducer(d.second).second);
+//    dbg(a);
+//    dbg(b);
+//    dbg(c);
+//    dbg(d);
+//    dbg(test.parseProducer(a.second).first);
+//    dbg(test.parseProducer(b.second).first);
+//    dbg(test.parseProducer(c.second).first);
+//    dbg(test.parseProducer(d.second).first);
+//    dbg(test.parseProducer(a.second).second);
+//    dbg(test.parseProducer(b.second).second);
+//    dbg(test.parseProducer(c.second).second);
+//    dbg(test.parseProducer(d.second).second);
 
 }
 

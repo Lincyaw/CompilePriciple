@@ -1,14 +1,13 @@
 int a #
 a = 2 #
-int fuc(a,b){
-    int a #
-    a = 2 #
-    for(int a = 2, a<3,a++){
-        int a #
-        a = 2
+int b = 3#
+int c#
+int fuc(a,b,c){
+    int d=0#
+    for(int i = 2, i<10,i++){
+        d=d+1
     }#
-    int a #
-    a = 2
+    c=d++
 }#
-int a #
-a = 2
+fuc(a,b,c)#
+b = c/2

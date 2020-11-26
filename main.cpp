@@ -3,15 +3,14 @@
 
 int main() {
 //    testModules();
+    cout<<"词法分析开始"<<endl;
     Lexical_analyzer lex;
     lex.lexical();
+    cout<<"词法分析结束,输出symbol.txt,token.txt"<<endl;
     Grammar_Analyzer gra;
-    dbg(lex.sysTable);
-//    for(auto i:gra.index){
-//        cout<<i.first<<"  "<<i.second<<endl;
-//    }
+//    dbg(lex.sysTable);
+    cout<<"语法分析开始"<<endl;
     gra.LR1(lex.sysTable);
-    cout<<"finished"<<endl;
-
+    cout<<"语法分析结束,输出producer.txt"<<endl;
     return 0;
 }
