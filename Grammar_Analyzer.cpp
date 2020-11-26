@@ -94,7 +94,7 @@ void Grammar_Analyzer::LR1(vector<pair<int, string>> Input) {
             a = Input[pointer];
         } else if (action.first == "r") {
             auto producer = parseProducer(action.second);
-            int popNum = 0;
+
             for (int i = 0; i < producer.second.size(); i++) {
                 symbolStack.pop_back();
                 stateStack.pop_back();
@@ -111,6 +111,7 @@ void Grammar_Analyzer::LR1(vector<pair<int, string>> Input) {
             cout<<endl;
 
             dbg(S1);
+            dbg(producer.first);
             dbg(producer.second);
             dbg(NoEndIndex[producer.first]);
         } else if (LookAction=="accept") {
@@ -235,6 +236,7 @@ void Grammar_Analyzer::initNotEndIndex() {
             }
             token += i;
         }
+        NoEndIndex[token] = count;
     }
 }
 
