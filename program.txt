@@ -1,6 +1,6 @@
-int a = 3.,
-a = b+c.,
+int a = 3#
+a = b+c#
 for(int a = 2,a<3,a++){
-    int b = 2 .,
+    int b = 2 #
     b = a + b
 }

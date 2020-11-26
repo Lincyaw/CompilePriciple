@@ -6,7 +6,7 @@
 #include <utility>
 
 void Grammar_Analyzer::initActionMap() {
-    ifstream fp("../input.txt"); //定义声明一个ifstream对象，指定文件路径
+    ifstream fp("../actionMap.txt"); //定义声明一个ifstream对象，指定文件路径
     string line;
     while (getline(fp, line)) { //循环读取每行数据
         vector<string> temp;
@@ -25,7 +25,7 @@ void Grammar_Analyzer::initActionMap() {
 }
 
 void Grammar_Analyzer::initGotoMap() {
-    ifstream fp("../testinput.txt"); //定义声明一个ifstream对象，指定文件路径
+    ifstream fp("../gotoMap.txt"); //定义声明一个ifstream对象，指定文件路径
     string line;
     while (getline(fp, line)) { //循环读取每行数据
         vector<int> temp;
@@ -198,7 +198,7 @@ pair<string, vector<string>> Grammar_Analyzer::parseProducer(const string &input
 
 
 void Grammar_Analyzer::initIndex() {
-    ifstream fp("../index.txt"); //定义声明一个ifstream对象，指定文件路径
+    ifstream fp("../actionMapIndex.txt"); //定义声明一个ifstream对象，指定文件路径
     string line;
     int count = 0;
     while (getline(fp, line)) { //循环读取每行数据
@@ -221,7 +221,7 @@ void Grammar_Analyzer::initIndex() {
 
 
 void Grammar_Analyzer::initNotEndIndex() {
-    ifstream fp("../NoEndIndex.txt"); //定义声明一个ifstream对象，指定文件路径
+    ifstream fp("../gotoMapIndex.txt"); //定义声明一个ifstream对象，指定文件路径
     string line;
     int count = 0;
     while (getline(fp, line)) { //循环读取每行数据
