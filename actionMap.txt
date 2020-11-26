@@ -5,207 +5,224 @@
 -1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce type -> int	-1	-1	-1	-1	-1
 -1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce type -> char	-1	-1	-1	-1	-1
 -1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce type -> void	-1	-1	-1	-1	-1
--1	shift 11	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 12	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 13	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	shift 11	-1	-1	-1	shift 12	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 13	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 14	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
 -1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 4	shift 5	shift 6	shift 7	-1	shift 8	-1	reduce S' -> ε	reduce S' -> ε
--1	shift 15	-1	-1	-1	shift 16	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 17	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token	reduce S' -> type token
--1	-1	-1	-1	-1	shift 21	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 22	shift 23	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 24	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 4	shift 5	shift 6	shift 27	-1	shift 28	reduce S' -> ε	-1	-1
+-1	shift 16	-1	-1	-1	shift 17	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 18	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token	reduce S' -> type token
+-1	-1	-1	-1	-1	shift 22	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 23	shift 24	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	reduce list -> ε	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 26	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 27	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 4	shift 5	shift 6	shift 30	-1	shift 31	reduce S' -> ε	-1	-1
 -1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce C -> C # S'	reduce C -> C # S'
--1	-1	-1	-1	-1	shift 21	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 22	shift 23	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	reduce list -> ε	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 31	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 32	-1	-1	-1	-1
-shift 34	-1	shift 35	-1	-1	-1	-1	shift 36	shift 37	shift 38	shift 39	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> token = S	reduce S' -> token = S
-reduce S -> A	-1	reduce S -> A	shift 40	shift 41	-1	-1	reduce S -> A	reduce S -> A	reduce S -> A	reduce S -> A	-1	shift 42	shift 43	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> A	reduce S -> A
-reduce A -> B	-1	reduce A -> B	reduce A -> B	reduce A -> B	-1	-1	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	-1	reduce A -> B	reduce A -> B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> B	reduce A -> B
--1	-1	-1	-1	-1	shift 47	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 48	shift 49	-1	-1	-1	-1
-reduce B -> token	-1	reduce B -> token	reduce B -> token	reduce B -> token	-1	-1	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	-1	reduce B -> token	reduce B -> token	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> token	reduce B -> token
-reduce B -> constV	-1	reduce B -> constV	reduce B -> constV	reduce B -> constV	-1	-1	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	-1	reduce B -> constV	reduce B -> constV	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> constV	reduce B -> constV
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 50	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 51	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 52	-1	-1	-1	-1	-1
--1	shift 53	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 54	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 55	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
-shift 34	-1	shift 35	-1	-1	-1	-1	shift 36	shift 37	shift 38	shift 39	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token = S	reduce S' -> type token = S
--1	-1	-1	-1	-1	-1	shift 56	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	reduce list -> token	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 57	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 58	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 21	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 22	shift 23	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 21	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 22	shift 23	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 21	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 22	shift 23	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 22	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 23	shift 24	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	reduce list -> ε	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 26	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 34	-1	-1	-1	-1
+shift 36	-1	shift 37	-1	-1	-1	-1	shift 38	shift 39	shift 40	shift 41	shift 42	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> token = S	reduce S' -> token = S
+reduce S -> A	-1	reduce S -> A	shift 43	shift 44	-1	-1	reduce S -> A	reduce S -> A	reduce S -> A	reduce S -> A	reduce S -> A	shift 45	shift 46	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> A	reduce S -> A
+reduce A -> B	-1	reduce A -> B	reduce A -> B	reduce A -> B	-1	-1	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> B	reduce A -> B
+-1	-1	-1	-1	-1	shift 50	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 51	shift 52	-1	-1	-1	-1
+reduce B -> token	-1	reduce B -> token	reduce B -> token	reduce B -> token	shift 53	-1	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> token	reduce B -> token
+reduce B -> constV	-1	reduce B -> constV	reduce B -> constV	reduce B -> constV	-1	-1	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> constV	reduce B -> constV
+-1	-1	-1	-1	-1	-1	shift 54	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	reduce list -> token	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 55	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 56	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 57	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 58	-1	-1	-1	-1	-1
+-1	shift 59	-1	-1	-1	shift 60	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 61	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 62	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+shift 36	-1	shift 37	-1	-1	-1	-1	shift 38	shift 39	shift 40	shift 41	shift 42	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token = S	reduce S' -> type token = S
+-1	-1	-1	-1	-1	-1	shift 63	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 64	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 22	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 66	shift 24	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 22	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 66	shift 24	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 22	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 66	shift 24	-1	-1	-1	-1
 -1	-1	-1	-1	-1	reduce comOp -> >	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce comOp -> >	reduce comOp -> >	-1	-1	-1	-1
 -1	-1	-1	-1	-1	reduce comOp -> <	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce comOp -> <	reduce comOp -> <	-1	-1	-1	-1
 -1	-1	-1	-1	-1	reduce comOp -> <=	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce comOp -> <=	reduce comOp -> <=	-1	-1	-1	-1
 -1	-1	-1	-1	-1	reduce comOp -> >=	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce comOp -> >=	reduce comOp -> >=	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 21	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 22	shift 23	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 21	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 22	shift 23	-1	-1	-1	-1
-reduce A -> A ++	-1	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	-1	-1	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	-1	reduce A -> A ++	reduce A -> A ++	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A ++	reduce A -> A ++
-reduce A -> A --	-1	reduce A -> A --	reduce A -> A --	reduce A -> A --	-1	-1	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	-1	reduce A -> A --	reduce A -> A --	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A --	reduce A -> A --
-shift 65	-1	shift 66	-1	-1	-1	shift 67	shift 36	shift 37	shift 38	shift 39	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
-reduce S -> A	-1	reduce S -> A	shift 68	shift 69	-1	reduce S -> A	reduce S -> A	reduce S -> A	reduce S -> A	reduce S -> A	-1	shift 70	shift 71	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
-reduce A -> B	-1	reduce A -> B	reduce A -> B	reduce A -> B	-1	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	-1	reduce A -> B	reduce A -> B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 47	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 48	shift 49	-1	-1	-1	-1
-reduce B -> token	-1	reduce B -> token	reduce B -> token	reduce B -> token	-1	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	-1	reduce B -> token	reduce B -> token	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
-reduce B -> constV	-1	reduce B -> constV	reduce B -> constV	reduce B -> constV	-1	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	-1	reduce B -> constV	reduce B -> constV	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	shift 73	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 77	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 78	shift 79	-1	-1	-1	-1
--1	shift 80	-1	-1	-1	shift 81	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 82	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token	-1	-1
--1	-1	-1	-1	-1	shift 77	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 78	shift 79	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 84	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 4	shift 5	shift 6	shift 27	-1	shift 28	reduce S' -> ε	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 86	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	reduce list -> ε	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 31	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	reduce comOp -> ==	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce comOp -> ==	reduce comOp -> ==	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 22	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 66	shift 24	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 22	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 66	shift 24	-1	-1	-1	-1
+reduce A -> A ++	-1	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	-1	-1	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A ++	reduce A -> A ++
+reduce A -> A --	-1	reduce A -> A --	reduce A -> A --	reduce A -> A --	-1	-1	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A --	reduce A -> A --
+shift 72	-1	shift 73	-1	-1	-1	shift 74	shift 38	shift 39	shift 40	shift 41	shift 42	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+reduce S -> A	-1	reduce S -> A	shift 75	shift 76	-1	reduce S -> A	reduce S -> A	reduce S -> A	reduce S -> A	reduce S -> A	reduce S -> A	shift 77	shift 78	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+reduce A -> B	-1	reduce A -> B	reduce A -> B	reduce A -> B	-1	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 50	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 51	shift 52	-1	-1	-1	-1
+reduce B -> token	-1	reduce B -> token	reduce B -> token	reduce B -> token	shift 80	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+reduce B -> constV	-1	reduce B -> constV	reduce B -> constV	reduce B -> constV	-1	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	reduce list -> ε	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 26	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> token ( list )	reduce S' -> token ( list )
+-1	-1	-1	-1	-1	-1	reduce list -> ε	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 26	-1	-1	-1	-1	-1
+-1	shift 83	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 87	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 88	shift 89	-1	-1	-1	-1
+-1	shift 90	-1	-1	-1	shift 91	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 92	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token	-1	-1
+-1	-1	-1	-1	-1	shift 87	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 88	shift 89	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	reduce list -> ε	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 26	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 95	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 4	shift 5	shift 6	shift 30	-1	shift 31	reduce S' -> ε	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 97	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
 -1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token [ constV ]	reduce S' -> type token [ constV ]
-reduce S -> S comOp A	-1	reduce S -> S comOp A	shift 40	shift 41	-1	-1	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	-1	shift 42	shift 43	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> S comOp A	reduce S -> S comOp A
-reduce S -> S + A	-1	reduce S -> S + A	shift 40	shift 41	-1	-1	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	-1	shift 42	shift 43	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> S + A	reduce S -> S + A
-reduce S -> S - A	-1	reduce S -> S - A	shift 40	shift 41	-1	-1	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	-1	shift 42	shift 43	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> S - A	reduce S -> S - A
-reduce A -> A * B	-1	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	-1	-1	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	-1	reduce A -> A * B	reduce A -> A * B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A * B	reduce A -> A * B
-reduce A -> A / B	-1	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	-1	-1	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	-1	reduce A -> A / B	reduce A -> A / B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A / B	reduce A -> A / B
--1	-1	-1	-1	-1	shift 47	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 48	shift 49	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 47	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 48	shift 49	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 47	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 48	shift 49	-1	-1	-1	-1
-reduce B -> ( S )	-1	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	-1	-1	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	-1	reduce B -> ( S )	reduce B -> ( S )	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> ( S )	reduce B -> ( S )
--1	-1	-1	-1	-1	shift 47	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 48	shift 49	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 47	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 48	shift 49	-1	-1	-1	-1
-reduce A -> A ++	-1	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	-1	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	-1	reduce A -> A ++	reduce A -> A ++	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
-reduce A -> A --	-1	reduce A -> A --	reduce A -> A --	reduce A -> A --	-1	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	-1	reduce A -> A --	reduce A -> A --	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
-shift 65	-1	shift 66	-1	-1	-1	shift 93	shift 36	shift 37	shift 38	shift 39	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 21	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 22	shift 23	-1	-1	-1	-1
-shift 96	-1	shift 97	-1	-1	-1	-1	shift 36	shift 37	shift 38	shift 39	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 98	-1	-1
-reduce S -> A	-1	reduce S -> A	shift 99	shift 100	-1	-1	reduce S -> A	reduce S -> A	reduce S -> A	reduce S -> A	-1	shift 101	shift 102	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> A	-1	-1
-reduce A -> B	-1	reduce A -> B	reduce A -> B	reduce A -> B	-1	-1	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	-1	reduce A -> B	reduce A -> B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> B	-1	-1
--1	-1	-1	-1	-1	shift 47	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 48	shift 49	-1	-1	-1	-1
-reduce B -> token	-1	reduce B -> token	reduce B -> token	reduce B -> token	-1	-1	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	-1	reduce B -> token	reduce B -> token	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> token	-1	-1
-reduce B -> constV	-1	reduce B -> constV	reduce B -> constV	reduce B -> constV	-1	-1	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	-1	reduce B -> constV	reduce B -> constV	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> constV	-1	-1
--1	-1	-1	-1	-1	shift 77	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 78	shift 79	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	reduce list -> ε	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 31	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 106	-1	-1	-1	-1
-shift 96	-1	shift 97	-1	-1	-1	-1	shift 36	shift 37	shift 38	shift 39	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> token = S	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 107	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 108	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> ε	-1	-1	shift 4	shift 5	shift 6	shift 112	-1	shift 113	-1	reduce S' -> ε	-1
+reduce S -> S comOp A	-1	reduce S -> S comOp A	shift 43	shift 44	-1	-1	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	shift 45	shift 46	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> S comOp A	reduce S -> S comOp A
+reduce B -> token	-1	reduce B -> token	reduce B -> token	reduce B -> token	-1	-1	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> token	reduce B -> token
+reduce S -> S + A	-1	reduce S -> S + A	shift 43	shift 44	-1	-1	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	shift 45	shift 46	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> S + A	reduce S -> S + A
+reduce S -> S - A	-1	reduce S -> S - A	shift 43	shift 44	-1	-1	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	shift 45	shift 46	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> S - A	reduce S -> S - A
+reduce A -> A * B	-1	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	-1	-1	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A * B	reduce A -> A * B
+reduce A -> A / B	-1	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	-1	-1	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A / B	reduce A -> A / B
+-1	-1	-1	-1	-1	shift 50	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 99	shift 52	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 50	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 99	shift 52	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 50	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 99	shift 52	-1	-1	-1	-1
+reduce B -> ( S )	-1	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	-1	-1	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> ( S )	reduce B -> ( S )
+-1	-1	-1	-1	-1	shift 50	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 99	shift 52	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 50	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 99	shift 52	-1	-1	-1	-1
+reduce A -> A ++	-1	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	-1	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+reduce A -> A --	-1	reduce A -> A --	reduce A -> A --	reduce A -> A --	-1	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+shift 72	-1	shift 73	-1	-1	-1	shift 104	shift 38	shift 39	shift 40	shift 41	shift 42	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	reduce list -> ε	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 26	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	shift 106	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
 -1	-1	-1	-1	-1	-1	reduce list -> token , list	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
-reduce S -> S comOp A	-1	reduce S -> S comOp A	shift 68	shift 69	-1	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	-1	shift 70	shift 71	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
-reduce S -> S + A	-1	reduce S -> S + A	shift 68	shift 69	-1	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	-1	shift 70	shift 71	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
-reduce S -> S - A	-1	reduce S -> S - A	shift 68	shift 69	-1	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	-1	shift 70	shift 71	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
-reduce A -> A * B	-1	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	-1	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	-1	reduce A -> A * B	reduce A -> A * B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
-reduce A -> A / B	-1	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	-1	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	-1	reduce A -> A / B	reduce A -> A / B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
-reduce B -> ( S )	-1	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	-1	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	-1	reduce B -> ( S )	reduce B -> ( S )	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
-shift 34	-1	shift 35	-1	-1	-1	-1	shift 36	shift 37	shift 38	shift 39	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> token [ constV ] = S	reduce S' -> token [ constV ] = S
--1	-1	-1	-1	-1	shift 77	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 78	shift 79	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 77	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 78	shift 79	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 77	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 78	shift 79	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 119	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 120	shift 121	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 77	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 78	shift 79	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 77	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 78	shift 79	-1	-1	-1	-1
-reduce A -> A ++	-1	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	-1	-1	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	-1	reduce A -> A ++	reduce A -> A ++	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A ++	-1	-1
-reduce A -> A --	-1	reduce A -> A --	reduce A -> A --	reduce A -> A --	-1	-1	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	-1	reduce A -> A --	reduce A -> A --	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A --	-1	-1
-shift 65	-1	shift 66	-1	-1	-1	shift 124	shift 36	shift 37	shift 38	shift 39	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
-shift 96	-1	shift 97	-1	-1	-1	-1	shift 36	shift 37	shift 38	shift 39	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token = S	-1	-1
--1	-1	-1	-1	-1	-1	shift 125	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 126	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	shift 127	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 77	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 78	shift 79	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 129	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 130	-1
+-1	-1	-1	-1	-1	shift 22	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 23	shift 24	-1	-1	-1	-1
+shift 109	-1	shift 110	-1	-1	-1	-1	shift 38	shift 39	shift 40	shift 41	shift 42	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 111	-1	-1
+reduce S -> A	-1	reduce S -> A	shift 112	shift 113	-1	-1	reduce S -> A	reduce S -> A	reduce S -> A	reduce S -> A	reduce S -> A	shift 114	shift 115	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> A	-1	-1
+reduce A -> B	-1	reduce A -> B	reduce A -> B	reduce A -> B	-1	-1	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> B	-1	-1
+-1	-1	-1	-1	-1	shift 50	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 51	shift 52	-1	-1	-1	-1
+reduce B -> token	-1	reduce B -> token	reduce B -> token	reduce B -> token	shift 117	-1	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> token	-1	-1
+reduce B -> constV	-1	reduce B -> constV	reduce B -> constV	reduce B -> constV	-1	-1	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> constV	-1	-1
+-1	-1	-1	-1	-1	shift 87	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 88	shift 89	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	reduce list -> ε	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 26	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 120	-1	-1	-1	-1
+shift 109	-1	shift 110	-1	-1	-1	-1	shift 38	shift 39	shift 40	shift 41	shift 42	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> token = S	-1	-1
+-1	-1	-1	-1	-1	-1	shift 121	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 122	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 123	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> ε	-1	-1	shift 4	shift 5	shift 6	shift 127	-1	shift 128	-1	reduce S' -> ε	-1
+reduce S -> S comOp A	-1	reduce S -> S comOp A	shift 75	shift 76	-1	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	shift 77	shift 78	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+reduce B -> token	-1	reduce B -> token	reduce B -> token	reduce B -> token	-1	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+reduce S -> S + A	-1	reduce S -> S + A	shift 75	shift 76	-1	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	shift 77	shift 78	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+reduce S -> S - A	-1	reduce S -> S - A	shift 75	shift 76	-1	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	shift 77	shift 78	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+reduce A -> A * B	-1	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	-1	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+reduce A -> A / B	-1	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	-1	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+reduce B -> ( S )	-1	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	-1	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	shift 129	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+reduce S -> token ( list )	-1	reduce S -> token ( list )	-1	-1	-1	-1	reduce S -> token ( list )	reduce S -> token ( list )	reduce S -> token ( list )	reduce S -> token ( list )	reduce S -> token ( list )	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> token ( list )	reduce S -> token ( list )
+shift 36	-1	shift 37	-1	-1	-1	-1	shift 38	shift 39	shift 40	shift 41	shift 42	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> token [ constV ] = S	reduce S' -> token [ constV ] = S
+-1	-1	-1	-1	-1	shift 87	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 131	shift 89	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 87	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 131	shift 89	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 87	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 131	shift 89	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 136	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 137	shift 138	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 87	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 131	shift 89	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 87	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 131	shift 89	-1	-1	-1	-1
+reduce A -> A ++	-1	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	-1	-1	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A ++	-1	-1
+reduce A -> A --	-1	reduce A -> A --	reduce A -> A --	reduce A -> A --	-1	-1	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A --	-1	-1
+shift 72	-1	shift 73	-1	-1	-1	shift 141	shift 38	shift 39	shift 40	shift 41	shift 42	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	reduce list -> ε	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 26	-1	-1	-1	-1	-1
+shift 109	-1	shift 110	-1	-1	-1	-1	shift 38	shift 39	shift 40	shift 41	shift 42	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token = S	-1	-1
+-1	-1	-1	-1	-1	-1	shift 143	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 144	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> token ( list )	-1	-1
+-1	shift 145	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 87	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 88	shift 89	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 147	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 148	-1
 -1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce C -> S'	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce C -> S'	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 131	-1	-1	-1	-1	-1
--1	shift 132	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 133	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 134	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
-reduce S -> S comOp A	-1	reduce S -> S comOp A	shift 99	shift 100	-1	-1	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	-1	shift 101	shift 102	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> S comOp A	-1	-1
-reduce S -> S + A	-1	reduce S -> S + A	shift 99	shift 100	-1	-1	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	-1	shift 101	shift 102	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> S + A	-1	-1
-reduce S -> S - A	-1	reduce S -> S - A	shift 99	shift 100	-1	-1	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	-1	shift 101	shift 102	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> S - A	-1	-1
--1	-1	-1	shift 135	shift 136	-1	shift 137	-1	-1	-1	-1	-1	shift 138	shift 139	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 149	-1	-1	-1	-1	-1
+-1	shift 150	-1	-1	-1	shift 151	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 152	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 153	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+reduce S -> token ( list )	-1	reduce S -> token ( list )	-1	-1	-1	reduce S -> token ( list )	reduce S -> token ( list )	reduce S -> token ( list )	reduce S -> token ( list )	reduce S -> token ( list )	reduce S -> token ( list )	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+reduce S -> S comOp A	-1	reduce S -> S comOp A	shift 112	shift 113	-1	-1	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	shift 114	shift 115	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> S comOp A	-1	-1
+reduce B -> token	-1	reduce B -> token	reduce B -> token	reduce B -> token	-1	-1	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> token	-1	-1
+reduce S -> S + A	-1	reduce S -> S + A	shift 112	shift 113	-1	-1	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	shift 114	shift 115	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> S + A	-1	-1
+reduce S -> S - A	-1	reduce S -> S - A	shift 112	shift 113	-1	-1	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	shift 114	shift 115	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> S - A	-1	-1
+-1	-1	-1	shift 154	shift 155	-1	shift 156	-1	-1	-1	-1	-1	shift 157	shift 158	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
 -1	-1	-1	reduce A -> B	reduce A -> B	-1	reduce A -> B	-1	-1	-1	-1	-1	reduce A -> B	reduce A -> B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 47	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 48	shift 49	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 50	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 51	shift 52	-1	-1	-1	-1
 -1	-1	-1	reduce B -> token	reduce B -> token	-1	reduce B -> token	-1	-1	-1	-1	-1	reduce B -> token	reduce B -> token	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
 -1	-1	-1	reduce B -> constV	reduce B -> constV	-1	reduce B -> constV	-1	-1	-1	-1	-1	reduce B -> constV	reduce B -> constV	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
-reduce A -> A * B	-1	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	-1	-1	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	-1	reduce A -> A * B	reduce A -> A * B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A * B	-1	-1
-reduce A -> A / B	-1	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	-1	-1	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	-1	reduce A -> A / B	reduce A -> A / B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A / B	-1	-1
-reduce B -> ( S )	-1	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	-1	-1	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	-1	reduce B -> ( S )	reduce B -> ( S )	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> ( S )	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 141	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+reduce A -> A * B	-1	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	-1	-1	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A * B	-1	-1
+reduce A -> A / B	-1	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	-1	-1	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A / B	-1	-1
+reduce B -> ( S )	-1	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	-1	-1	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> ( S )	-1	-1
+-1	-1	-1	-1	-1	-1	shift 160	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 161	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
 -1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token [ constV ]	-1	-1
--1	-1	-1	-1	-1	shift 77	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 78	shift 79	-1	-1	-1	-1
-shift 96	-1	shift 97	-1	-1	-1	-1	shift 36	shift 37	shift 38	shift 39	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 143	-1	-1
+-1	-1	-1	-1	-1	shift 87	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 88	shift 89	-1	-1	-1	-1
+shift 109	-1	shift 110	-1	-1	-1	-1	shift 38	shift 39	shift 40	shift 41	shift 42	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 163	-1	-1
 -1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token ( list ) { C }	reduce S' -> type token ( list ) { C }
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> ε	-1	-1	shift 4	shift 5	shift 6	shift 112	-1	shift 113	-1	reduce S' -> ε	-1
--1	shift 145	-1	-1	-1	shift 146	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token	shift 147	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token	-1
--1	-1	-1	-1	-1	shift 151	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 152	shift 153	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 154	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 4	shift 5	shift 6	shift 27	-1	shift 28	reduce S' -> ε	-1	-1
--1	-1	-1	-1	-1	shift 119	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 120	shift 121	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 119	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 120	shift 121	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 158	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> ε	-1	-1	shift 4	shift 5	shift 6	shift 127	-1	shift 128	-1	reduce S' -> ε	-1
+-1	shift 165	-1	-1	-1	shift 166	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token	shift 167	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token	-1
+-1	-1	-1	-1	-1	shift 171	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 172	shift 173	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	reduce list -> ε	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 26	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 175	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 4	shift 5	shift 6	shift 30	-1	shift 31	reduce S' -> ε	-1	-1
+-1	-1	-1	-1	-1	shift 136	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 137	shift 138	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 136	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 137	shift 138	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 179	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
 -1	-1	-1	reduce A -> A ++	reduce A -> A ++	-1	reduce A -> A ++	-1	-1	-1	-1	-1	reduce A -> A ++	reduce A -> A ++	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
 -1	-1	-1	reduce A -> A --	reduce A -> A --	-1	reduce A -> A --	-1	-1	-1	-1	-1	reduce A -> A --	reduce A -> A --	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
-shift 65	-1	shift 66	-1	-1	-1	shift 159	shift 36	shift 37	shift 38	shift 39	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> ε	-1	-1	shift 4	shift 5	shift 6	shift 112	-1	shift 113	-1	reduce S' -> ε	-1
-shift 96	-1	shift 97	-1	-1	-1	-1	shift 36	shift 37	shift 38	shift 39	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> token [ constV ] = S	-1	-1
--1	-1	-1	-1	-1	shift 119	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 120	shift 121	-1	-1	-1	-1
+shift 72	-1	shift 73	-1	-1	-1	shift 180	shift 38	shift 39	shift 40	shift 41	shift 42	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+reduce S -> token ( list )	-1	reduce S -> token ( list )	-1	-1	-1	-1	reduce S -> token ( list )	reduce S -> token ( list )	reduce S -> token ( list )	reduce S -> token ( list )	reduce S -> token ( list )	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> token ( list )	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> ε	-1	-1	shift 4	shift 5	shift 6	shift 127	-1	shift 128	-1	reduce S' -> ε	-1
+shift 109	-1	shift 110	-1	-1	-1	-1	shift 38	shift 39	shift 40	shift 41	shift 42	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> token [ constV ] = S	-1	-1
+-1	-1	-1	-1	-1	shift 136	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 137	shift 138	-1	-1	-1	-1
 -1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce C -> C # S'	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce C -> C # S'	-1
--1	-1	-1	-1	-1	shift 151	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 152	shift 153	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	reduce list -> ε	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 31	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 164	-1	-1	-1	-1
-shift 166	-1	shift 167	-1	-1	-1	-1	shift 36	shift 37	shift 38	shift 39	-1	-1	-1	-1	reduce S' -> token = S	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> token = S	-1
-reduce S -> A	-1	reduce S -> A	shift 168	shift 169	-1	-1	reduce S -> A	reduce S -> A	reduce S -> A	reduce S -> A	-1	shift 170	shift 171	-1	reduce S -> A	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> A	-1
-reduce A -> B	-1	reduce A -> B	reduce A -> B	reduce A -> B	-1	-1	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	-1	reduce A -> B	reduce A -> B	-1	reduce A -> B	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> B	-1
--1	-1	-1	-1	-1	shift 47	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 48	shift 49	-1	-1	-1	-1
-reduce B -> token	-1	reduce B -> token	reduce B -> token	reduce B -> token	-1	-1	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	-1	reduce B -> token	reduce B -> token	-1	reduce B -> token	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> token	-1
-reduce B -> constV	-1	reduce B -> constV	reduce B -> constV	reduce B -> constV	-1	-1	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	-1	reduce B -> constV	reduce B -> constV	-1	reduce B -> constV	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> constV	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 173	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 174	-1	-1
+-1	-1	-1	-1	-1	shift 171	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 172	shift 173	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	reduce list -> ε	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 26	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 185	-1	-1	-1	-1
+shift 187	-1	shift 188	-1	-1	-1	-1	shift 38	shift 39	shift 40	shift 41	shift 42	-1	-1	-1	reduce S' -> token = S	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> token = S	-1
+reduce S -> A	-1	reduce S -> A	shift 189	shift 190	-1	-1	reduce S -> A	reduce S -> A	reduce S -> A	reduce S -> A	reduce S -> A	shift 191	shift 192	-1	reduce S -> A	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> A	-1
+reduce A -> B	-1	reduce A -> B	reduce A -> B	reduce A -> B	-1	-1	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	reduce A -> B	-1	reduce A -> B	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> B	-1
+-1	-1	-1	-1	-1	shift 50	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 51	shift 52	-1	-1	-1	-1
+reduce B -> token	-1	reduce B -> token	reduce B -> token	reduce B -> token	shift 194	-1	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	-1	reduce B -> token	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> token	-1
+reduce B -> constV	-1	reduce B -> constV	reduce B -> constV	reduce B -> constV	-1	-1	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	reduce B -> constV	-1	reduce B -> constV	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> constV	-1
+-1	-1	-1	-1	-1	-1	shift 195	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 196	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 197	-1	-1
 -1	-1	-1	reduce A -> A * B	reduce A -> A * B	-1	reduce A -> A * B	-1	-1	-1	-1	-1	reduce A -> A * B	reduce A -> A * B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
 -1	-1	-1	reduce A -> A / B	reduce A -> A / B	-1	reduce A -> A / B	-1	-1	-1	-1	-1	reduce A -> A / B	reduce A -> A / B	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> ε	-1	-1	shift 4	shift 5	shift 6	shift 112	-1	shift 113	-1	reduce S' -> ε	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> ε	-1	-1	shift 4	shift 5	shift 6	shift 127	-1	shift 128	-1	reduce S' -> ε	-1
 -1	-1	-1	reduce B -> ( S )	reduce B -> ( S )	-1	reduce B -> ( S )	-1	-1	-1	-1	-1	reduce B -> ( S )	reduce B -> ( S )	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 176	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 130	-1
--1	-1	-1	shift 135	shift 136	-1	shift 177	-1	-1	-1	-1	-1	shift 138	shift 139	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
-shift 166	-1	shift 167	-1	-1	-1	-1	shift 36	shift 37	shift 38	shift 39	-1	-1	-1	-1	reduce S' -> type token = S	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token = S	-1
--1	-1	-1	-1	-1	-1	shift 178	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 179	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 151	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 152	shift 153	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 151	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 152	shift 153	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 151	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 152	shift 153	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 151	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 152	shift 153	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 151	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 152	shift 153	-1	-1	-1	-1
-reduce A -> A ++	-1	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	-1	-1	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	-1	reduce A -> A ++	reduce A -> A ++	-1	reduce A -> A ++	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A ++	-1
-reduce A -> A --	-1	reduce A -> A --	reduce A -> A --	reduce A -> A --	-1	-1	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	-1	reduce A -> A --	reduce A -> A --	-1	reduce A -> A --	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A --	-1
-shift 65	-1	shift 66	-1	-1	-1	shift 185	shift 36	shift 37	shift 38	shift 39	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	shift 186	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	shift 77	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 78	shift 79	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 188	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 130	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 199	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 148	-1
+-1	-1	-1	shift 154	shift 155	-1	shift 200	-1	-1	-1	-1	-1	shift 157	shift 158	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+shift 187	-1	shift 188	-1	-1	-1	-1	shift 38	shift 39	shift 40	shift 41	shift 42	-1	-1	-1	reduce S' -> type token = S	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token = S	-1
+-1	-1	-1	-1	-1	-1	shift 201	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 202	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 171	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 204	shift 173	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 171	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 204	shift 173	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 171	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 204	shift 173	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 171	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 204	shift 173	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 171	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 204	shift 173	-1	-1	-1	-1
+reduce A -> A ++	-1	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	-1	-1	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	reduce A -> A ++	-1	reduce A -> A ++	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A ++	-1
+reduce A -> A --	-1	reduce A -> A --	reduce A -> A --	reduce A -> A --	-1	-1	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	reduce A -> A --	-1	reduce A -> A --	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A --	-1
+shift 72	-1	shift 73	-1	-1	-1	shift 209	shift 38	shift 39	shift 40	shift 41	shift 42	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	reduce list -> ε	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 26	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> token ( list )	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> token ( list )	-1
+-1	shift 211	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 87	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 88	shift 89	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 213	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 148	-1
 -1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token ( list ) { C }	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 189	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 190	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 214	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 215	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
 -1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token [ constV ]	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token [ constV ]	-1
-reduce S -> S comOp A	-1	reduce S -> S comOp A	shift 168	shift 169	-1	-1	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	-1	shift 170	shift 171	-1	reduce S -> S comOp A	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> S comOp A	-1
-reduce S -> S + A	-1	reduce S -> S + A	shift 168	shift 169	-1	-1	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	-1	shift 170	shift 171	-1	reduce S -> S + A	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> S + A	-1
-reduce S -> S - A	-1	reduce S -> S - A	shift 168	shift 169	-1	-1	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	-1	shift 170	shift 171	-1	reduce S -> S - A	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> S - A	-1
-reduce A -> A * B	-1	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	-1	-1	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	-1	reduce A -> A * B	reduce A -> A * B	-1	reduce A -> A * B	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A * B	-1
-reduce A -> A / B	-1	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	-1	-1	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	-1	reduce A -> A / B	reduce A -> A / B	-1	reduce A -> A / B	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A / B	-1
-reduce B -> ( S )	-1	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	-1	-1	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	-1	reduce B -> ( S )	reduce B -> ( S )	-1	reduce B -> ( S )	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> ( S )	-1
--1	-1	-1	-1	-1	shift 151	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 152	shift 153	-1	-1	-1	-1
-shift 96	-1	shift 97	-1	-1	-1	-1	shift 36	shift 37	shift 38	shift 39	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 192	-1	-1
+reduce S -> S comOp A	-1	reduce S -> S comOp A	shift 189	shift 190	-1	-1	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	reduce S -> S comOp A	shift 191	shift 192	-1	reduce S -> S comOp A	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> S comOp A	-1
+reduce B -> token	-1	reduce B -> token	reduce B -> token	reduce B -> token	-1	-1	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	reduce B -> token	-1	reduce B -> token	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> token	-1
+reduce S -> S + A	-1	reduce S -> S + A	shift 189	shift 190	-1	-1	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	reduce S -> S + A	shift 191	shift 192	-1	reduce S -> S + A	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> S + A	-1
+reduce S -> S - A	-1	reduce S -> S - A	shift 189	shift 190	-1	-1	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	reduce S -> S - A	shift 191	shift 192	-1	reduce S -> S - A	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> S - A	-1
+reduce A -> A * B	-1	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	-1	-1	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	reduce A -> A * B	-1	reduce A -> A * B	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A * B	-1
+reduce A -> A / B	-1	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	-1	-1	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	reduce A -> A / B	-1	reduce A -> A / B	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce A -> A / B	-1
+reduce B -> ( S )	-1	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	-1	-1	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	reduce B -> ( S )	-1	reduce B -> ( S )	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce B -> ( S )	-1
+-1	-1	-1	-1	-1	-1	shift 216	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	shift 171	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 172	shift 173	-1	-1	-1	-1
+shift 109	-1	shift 110	-1	-1	-1	-1	shift 38	shift 39	shift 40	shift 41	shift 42	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 218	-1	-1
 -1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> for ( S' , S , A ) { C }	reduce S' -> for ( S' , S , A ) { C }
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> ε	-1	-1	shift 4	shift 5	shift 6	shift 112	-1	shift 113	-1	reduce S' -> ε	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> ε	-1	-1	shift 4	shift 5	shift 6	shift 112	-1	shift 113	-1	reduce S' -> ε	-1
-shift 166	-1	shift 167	-1	-1	-1	-1	shift 36	shift 37	shift 38	shift 39	-1	-1	-1	-1	reduce S' -> token [ constV ] = S	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> token [ constV ] = S	-1
--1	-1	-1	-1	-1	shift 119	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 120	shift 121	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 196	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 130	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 197	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 130	-1
--1	-1	-1	shift 135	shift 136	-1	shift 198	-1	-1	-1	-1	-1	shift 138	shift 139	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> ε	-1	-1	shift 4	shift 5	shift 6	shift 127	-1	shift 128	-1	reduce S' -> ε	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> ε	-1	-1	shift 4	shift 5	shift 6	shift 127	-1	shift 128	-1	reduce S' -> ε	-1
+reduce S -> token ( list )	-1	reduce S -> token ( list )	-1	-1	-1	-1	reduce S -> token ( list )	reduce S -> token ( list )	reduce S -> token ( list )	reduce S -> token ( list )	reduce S -> token ( list )	-1	-1	-1	reduce S -> token ( list )	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S -> token ( list )	-1
+shift 187	-1	shift 188	-1	-1	-1	-1	shift 38	shift 39	shift 40	shift 41	shift 42	-1	-1	-1	reduce S' -> token [ constV ] = S	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> token [ constV ] = S	-1
+-1	-1	-1	-1	-1	shift 136	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 137	shift 138	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 222	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 148	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 223	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 148	-1
+-1	-1	-1	shift 154	shift 155	-1	shift 224	-1	-1	-1	-1	-1	shift 157	shift 158	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
 -1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> for ( S' , S , A ) { C }	-1	-1
 -1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token ( list ) { C }	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> type token ( list ) { C }	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 199	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> ε	-1	-1	shift 4	shift 5	shift 6	shift 112	-1	shift 113	-1	reduce S' -> ε	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 201	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 130	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 225	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> ε	-1	-1	shift 4	shift 5	shift 6	shift 127	-1	shift 128	-1	reduce S' -> ε	-1
+-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 227	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 148	-1
 -1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> for ( S' , S , A ) { C }	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce S' -> for ( S' , S , A ) { C }	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 204	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	shift 135	shift 136	-1	shift 205	-1	-1	-1	-1	-1	shift 138	shift 139	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 4	shift 5	shift 6	shift 113	-1	shift 114	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 207	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 208	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 130	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 4	shift 5	shift 6	shift 113	-1	shift 114	-1	-1	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce C -> for ( S' , S , A ) { C }	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce C -> for ( S' , S , A ) { C }	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 210	-1	-1	-1	-1	-1	-1	-1	-1	-1	shift 130	-1
--1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce C -> C # for ( S' , S , A ) { C }	-1	-1	-1	-1	-1	-1	-1	-1	-1	reduce C -> C # for ( S' , S , A ) { C }	-1
