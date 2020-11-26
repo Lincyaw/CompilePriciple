@@ -1,4 +1,14 @@
+int a #
+a = 2 #
 int fuc(a,b){
     int a #
+    a = 2 #
+    for(int a = 2, a<3,a++){
+        int a #
+        a = 2
+    }#
+    int a #
     a = 2
-}
+}#
+int a #
+a = 2
