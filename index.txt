@@ -1,1 +1,1 @@
-+	=	-	*	/	(	)	>	<	<=	>=	==	++	--	{	}	[	]	int	char	void	token	constV	for	,	$
++	=	-	*	/	(	)	>	<	<=	>=	==	++	--	{	}	[	]	int	char	void	token	constV	for	,	.,	$
