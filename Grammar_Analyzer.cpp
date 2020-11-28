@@ -57,32 +57,23 @@ void Grammar_Analyzer::LR1(vector<pair<int, string>> Input) {
     pair<int, string> a = Input[pointer];
 
 //    dbg(actionMap, gotoMap);
+//TODO: 在这里遇到数字或者id之后，就将他们的值存到下面的TODO里说的数据结构里
     while (!symbolStack.empty()) {
 //        dbg("round------------------------------------------------------");
 //        dbg(a);
         S = stateStack.back();
-        switch (a.first) {
-            case ID:
-                a.second = "token";
-                break;
-            case 82:
-                a.second = "constV";
-                break;
-            case 83:
-                a.second = "constV";
-                break;
-        }
-        // TODO: 如果a.fisrt 类型是标识符，则要把action.second变成语法分析表里有的.常数同理
+
+
+
 
 //        dbg(symbolStack, stateStack);
 //        dbg(a);
 //        dbg(S);
 //        dbg(index[a.second]);
 
-        // ? token 被跳过了
-        auto LookAction = actionMap[S][index[a.second]];
+        auto LookAction = actionMap[S][index[switcher(a)]];
 //        dbg(LookAction);
-        auto action = parseState(actionMap[S][index[a.second]]);
+        auto action = parseState(actionMap[S][index[switcher(a)]]);
 
 
         if (action.first == "s") {
@@ -96,6 +87,9 @@ void Grammar_Analyzer::LR1(vector<pair<int, string>> Input) {
             auto producer = parseProducer(action.second);
 
             for (int i = 0; i < producer.second.size(); i++) {
+                // TODO:要在出栈的时候处理一下数据
+                // 如： 将弹出的数据们赋值给producer.second里的字符串们。
+                // 那可能要把producer的数据结构改一改
                 symbolStack.pop_back();
                 stateStack.pop_back();
             }
@@ -104,17 +98,31 @@ void Grammar_Analyzer::LR1(vector<pair<int, string>> Input) {
             symbolStack.push_back(producer.first); // 左部产生式只有一个字符
             stateStack.push_back(gotoMap[S1][NoEndIndex[producer.first]]);
 
-            producerOut<<producer.first<<" -> ";
-            for(int i = 0;i<producer.second.size();i++){
-                producerOut<<producer.second[i]<<" ";
+            // TODO: 在这里进行生成中间代码，producer.first是产生式头部，producer.second是一个vector，存放着产生式尾部。
+            // 目前想法：使用map，为产生式中的每个符号都创建一个属性表
+            // 数据结构大致如下：
+            // map<string, MYSTRUCT> t;
+            // typedef struct MYSTRUCT{
+            //      int val;
+            //      auto type;
+            //      auto syn;
+            //      auto inh;
+            //}
+            producerOut << producer.first << " -> ";
+            for (int i = 0; i < producer.second.size(); i++) {
+                producerOut << producer.second[i] << " ";
+
             }
-            producerOut<<endl;
+            producerOut << endl;
+
+            translate(producer);
+
 
 //            dbg(S1);
 //            dbg(producer.first);
 //            dbg(producer.second);
 //            dbg(NoEndIndex[producer.first]);
-        } else if (LookAction=="accept") {
+        } else if (LookAction == "accept") {
             return;
         } else {
             exit(2);
@@ -245,6 +253,23 @@ Grammar_Analyzer::Grammar_Analyzer() {
     initActionMap();
     initGotoMap();
     initNotEndIndex();
+}
+
+void Grammar_Analyzer::translate(pair<string, vector<string>>) {
+
+}
+
+string Grammar_Analyzer::switcher(pair<int, string> input) {
+    switch (input.first) {
+        case ID:
+            return "token";
+        case 82:
+            return "constV";
+        case 83:
+            return "constV";
+        default:
+            return input.second;
+    }
 }
 
 void testModules() {

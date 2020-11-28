@@ -20,8 +20,7 @@ public:
     vector<int> stateStack;
     //符号栈
     vector<string> symbolStack;
-//    //产生式
-//    vector<pair<string,string>> producer;
+
     //动作表
     vector<vector<string>> actionMap;
     //转移表
@@ -39,8 +38,20 @@ public:
 
     void initIndex();
     void initNotEndIndex();
+    void translate(pair<string, vector<string>>);
+    // 将自定义的变量和常数转换为对应的名称
+    string switcher(pair<int, string> input);
 };
 
+class attributeTable{
+public:
+    int value;
+    int address;
+    int name;
+    int type;
+    int synthesis;
+    int inherit;
+};
 void testModules();
 
 void testParseState();
