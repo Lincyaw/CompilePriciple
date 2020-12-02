@@ -515,6 +515,13 @@ pair<int, string> Lexical_analyzer::scanner(const string &program, string::size_
     return ret;
 }
 
+pair<int, attributeTable> transfer(pair<int, string> tu) {
+    pair<int, attributeTable> temp;
+    temp.first = tu.first;
+    temp.second.symbol = tu.second;
+    return temp;
+}
+
 void Lexical_analyzer::lexical() {
     string program;
     ofstream tokenOut("../token.txt");
@@ -533,7 +540,7 @@ void Lexical_analyzer::lexical() {
                 no++;
                 cout << no << ": ";
                 cout << "Error in row" << row << "!" << '<' << tu.second << "," << tu.first << '>' << endl;
-                sysTable.push_back(tu);
+                sysTable.push_back(transfer(tu));
                 break;
             case -2:   // go next line;
                 row++;
@@ -545,7 +552,7 @@ void Lexical_analyzer::lexical() {
                 if (tu.first == ID) {
                     sysMap[tu.second] = systable();
                 }
-                sysTable.push_back(tu);
+                sysTable.push_back(transfer(tu));
                 break;
         }
     } while (pos < program.size());

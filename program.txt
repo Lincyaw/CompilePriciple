@@ -1,13 +1,6 @@
 int a #
 a = 2 #
 int b = 3#
-int c#
-int fuc(a,b,c){
-    int d=0#
-    for(int i = 2, i<10,i++){
-        d=d+1
-    }#
-    c=d++
-}#
-fuc(a,b,c)#
-b = c/2
+b = c/2#
+d = b+a#
+e = a/c

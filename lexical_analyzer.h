@@ -21,7 +21,7 @@ public:
 class Lexical_analyzer {
 public:
     // token串存放的数据结构
-    vector<pair<int, string>> sysTable;
+    vector<pair<int, attributeTable>> sysTable;
     // 符号表
     map<string, systable> sysMap;
 
