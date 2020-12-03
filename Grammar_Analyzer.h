@@ -6,9 +6,10 @@
 #define COMPILE_GRAMMAR_ANALYZER_H
 
 #include "myhead.h"
-#define MY_INT 0
-#define MY_CHAR 1
-#define MY_VOID 2
+//#define MY_INT 0
+//#define MY_CHAR 1
+//#define MY_VOID 2
+enum week {MY_INT, MY_CHAR, MY_VOID};
 class Grammar_Analyzer {
 public:
     Grammar_Analyzer();
@@ -23,7 +24,6 @@ public:
     //符号栈
     vector<attributeTable> symbolStack;
 
-    vector<attributeTable> producerWithAttr;
     //动作表
     vector<vector<string>> actionMap;
     //转移表
@@ -41,11 +41,13 @@ public:
 
     void initIndex();
     void initNotEndIndex();
-    void translate(vector<attributeTable> &producer);
+    bool translate(deque<attributeTable> &producer);
     // 将自定义的变量和常数转换为对应的名称
-    static string switcher(const pair<int, string>& input);
+    static string switcher(pair<int, attributeTable> &input);
 };
 
+void printProducerWithAttr(deque<attributeTable> producerWithAttr);
+void printAttrbuteTable(attributeTable table);
 
 void testModules();
 

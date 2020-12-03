@@ -18,7 +18,7 @@
 using namespace std;
 #define IS_BLANK(x) x==' '?true:false
 #define ID 85
-
+#include <deque>
 class attributeTable {
 public:
     attributeTable()=default;
@@ -39,30 +39,6 @@ public:
     int synthesis;
     int intVal;
 };
-/**
- * 带属性的"token"
- * @param symbol 在ID，数字这些时，这个字段是token和constV
- * @param value  存放的真正的ID和数字
- * @param intVal
- * @param address
- * @param name
- * @param type
- * @param synthesis
- */
-attributeTable::attributeTable(string symbol,
-                   string value,
-                   int intVal,
-                   int address,
-                   int name,
-                   int type,
-                   int synthesis) {
-    this->symbol = std::move(symbol);
-    this->value = std::move(value);
-    this->address = address;
-    this->name = name;
-    this->type = type;
-    this->synthesis = synthesis;
-    this->intVal = intVal;
-}
+
 
 #endif //COMPILE_MYHEAD_H

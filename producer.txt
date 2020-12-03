@@ -1,36 +1,17 @@
-type -> int 
-S' -> type token 
+B -> constV 
+A -> B 
+S -> A 
+S' -> token = S 
 C -> S' 
 B -> constV 
 A -> B 
 S -> A 
 S' -> token = S 
 C -> C # S' 
-type -> int 
-B -> constV 
-A -> B 
-S -> A 
-S' -> type token = S 
-C -> C # S' 
-B -> token 
-A -> B 
-B -> constV 
-A -> A / B 
-S -> A 
-S' -> token = S 
-C -> C # S' 
-B -> token 
-A -> B 
-S -> A 
-B -> token 
-A -> B 
-S -> S + A 
-S' -> token = S 
-C -> C # S' 
 B -> token 
 A -> B 
 B -> token 
-A -> A / B 
+A -> A * B 
 S -> A 
 S' -> token = S 
 C -> C # S' 
