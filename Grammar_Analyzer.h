@@ -12,11 +12,13 @@
 enum week {MY_INT, MY_CHAR, MY_VOID};
 class Grammar_Analyzer {
 public:
+
     Grammar_Analyzer();
     map<string, int> index;
+
     map<string, int> NoEndIndex;
-//    //输入的句子
-//    string input;
+    vector<vector<string>> midCodeOut;
+
     //句子指针
     int pointer{};
     //状态栈
@@ -34,6 +36,7 @@ public:
     static pair<string, string> parseState(const string &action);
 
     void initGotoMap();
+    map<string, attributeTable> sysMap;
 
     void initActionMap();
 
@@ -56,6 +59,6 @@ void testParseState();
 void testParseProducer();
 
 void testInitIndex();
-
+bool notEnd(string input,map<string, int> NoEndIndex);
 void trim();
 #endif //COMPILE_GRAMMAR_ANALYZER_H

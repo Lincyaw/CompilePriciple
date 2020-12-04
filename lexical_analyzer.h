@@ -4,6 +4,7 @@
 
 #ifndef COMPILE_LEXICAL_ANALYZER_H
 #define COMPILE_LEXICAL_ANALYZER_H
+
 #include "myhead.h"
 
 using namespace std;
@@ -14,6 +15,7 @@ public:
         this->address = address;
         this->type = type;
     }
+
     string type;
     string address;
 };

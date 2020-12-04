@@ -1,17 +1,25 @@
 B -> constV 
 A -> B 
 S -> A 
-S' -> token = S 
-C -> S' 
 B -> constV 
 A -> B 
+B -> constV 
+A -> A * B 
+S -> S + A 
+S' -> token = S 
+C -> S' 
+B -> token 
+A -> B 
 S -> A 
+B -> constV 
+A -> B 
+S -> S - A 
 S' -> token = S 
 C -> C # S' 
 B -> token 
 A -> B 
-B -> token 
-A -> A * B 
+B -> constV 
+A -> A / B 
 S -> A 
 S' -> token = S 
 C -> C # S' 

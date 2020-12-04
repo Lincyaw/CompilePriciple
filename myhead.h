@@ -19,6 +19,7 @@ using namespace std;
 #define IS_BLANK(x) x==' '?true:false
 #define ID 85
 #include <deque>
+
 class attributeTable {
 public:
     attributeTable()=default;

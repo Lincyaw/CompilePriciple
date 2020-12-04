@@ -104,7 +104,7 @@ void Grammar_Analyzer::LR1(vector<pair<int, attributeTable>> Input) {
             // TODO： 在这里处理产生式的赋值！！！！ 套个函数 加个case！！！
             auto S1 = stateStack.back();
             if (translate(producerWithAttr)) {
-                printProducerWithAttr(producerWithAttr);
+//                printProducerWithAttr(producerWithAttr);
             }
             symbolStack.emplace_back(producerWithAttr[0]); // 左部产生式只有一个字符
             stateStack.push_back(gotoMap[S1][NoEndIndex[producer.first]]);
@@ -253,10 +253,11 @@ Grammar_Analyzer::Grammar_Analyzer() {
 }
 
 bool Grammar_Analyzer::translate(deque<attributeTable> &pro) {
-
+    ofstream midCode;
+    midCode.open("../midCode.txt",ios::app);
     if (pro[0].symbol == "E'") {
         pro[0].symbol = pro[1].symbol;
-        pro[0].value = pro[1].value;
+//        pro[0].value = pro[1].value;
         pro[0].intVal = pro[1].intVal;
         pro[0].type = pro[1].type;
     } else if (pro[0].symbol == "S'") {
@@ -265,12 +266,17 @@ bool Grammar_Analyzer::translate(deque<attributeTable> &pro) {
                 if (pro.size() == 3) {
                     // S' -> type token;
                     pro[2].type = pro[1].type;
+                    sysMap[pro[2].value] = pro[2];
                 } else if (pro[3].symbol == "=") {
                     // S' -> type token = S;
-                    cout << pro[2].value << " = " << pro[4].value << endl;
                     pro[2].type = pro[4].type;
                     pro[2].value = pro[4].value;
                     pro[2].intVal = pro[4].intVal;
+                    sysMap[pro[2].value] = pro[2];
+                    cout << "-------------------S' -> type token = S---------------------" << endl;
+                    printAttrbuteTable(pro[2]);
+                    midCodeOut.push_back({pro[2].value, pro[4].value});
+                    midCode << pro[2].value << " = " << pro[4].value << endl;
                     return true;
                 } else if (pro[3].symbol == "[") {
                     // S' -> type token [ constV ];
@@ -293,8 +299,14 @@ bool Grammar_Analyzer::translate(deque<attributeTable> &pro) {
                     exit(-1);
                     break;
                 case 4: // S' -> token = S;
-                    cout << pro[1].value << " = " << pro[3].value << endl;
+//                    cout << pro[1].value << " = " << pro[3].value << endl;
                     pro[1].intVal = pro[3].intVal;
+                    pro[1].type = pro[3].type;
+                    sysMap[pro[1].value] = pro[1];
+                    cout << "-------------------S' -> token = S---------------------" << endl;
+                    printAttrbuteTable(pro[1]);
+                    midCodeOut.push_back({pro[1].value, pro[3].value});
+                    midCode << pro[1].value << " = " << pro[3].value << endl;
                     return true;
                     break;
                 case 7: // S' -> token [ constV ] = S;
@@ -320,22 +332,37 @@ bool Grammar_Analyzer::translate(deque<attributeTable> &pro) {
             case 2:
                 // S -> A;
                 pro[0].intVal = pro[1].intVal;
-                pro[0].value = pro[1].value;
+//                pro[0].value = pro[1].value;
                 pro[0].type = pro[1].type;
+                sysMap[pro[0].value] = pro[0];
+                cout << "-------------------S -> A---------------------" << endl;
+                printAttrbuteTable(pro[0]);
+                midCodeOut.push_back({pro[0].value, pro[1].value});
+                midCode << pro[0].value << " = " << pro[1].value << endl;
                 break;
             case 4:
                 if (pro[2].symbol == "+") {
                     // S -> S + A;
-                    cout << pro[0].symbol << " = " << pro[1].value << " + " << pro[3].value << endl;
-                    pro[0].intVal = pro[0].intVal + pro[1].intVal;
+                    pro[0].intVal = sysMap[pro[1].value].intVal + sysMap[pro[3].value].intVal;
                     pro[0].type = pro[1].type;
+                    sysMap[pro[0].value] = pro[0];
+                    cout << "-------------------S -> S + A---------------------" << endl;
+                    printAttrbuteTable(sysMap[pro[1].value]);
+                    printAttrbuteTable(sysMap[pro[3].value]);
+                    printAttrbuteTable(pro[0]);
+                    midCodeOut.push_back({pro[0].value, pro[1].value,"+",pro[3].value});
+                    midCode << pro[0].value << " = " << pro[1].value << " + " << pro[3].value << endl;
                     return true;
                 } else if (pro[2].symbol == "-") {
                     // S -> S - A;
-                    cout << pro[0].symbol << " = " << pro[1].value << " - " << pro[3].value << endl;
-
-                    pro[0].intVal = pro[0].intVal - pro[1].intVal;
-                    pro[0].type = pro[1].type;
+                    pro[0].intVal = sysMap[pro[1].value].intVal + sysMap[pro[2].value].intVal;
+                    pro[0].type = pro[2].type;
+                    sysMap[pro[0].value] = pro[0];
+                    cout << "-------------------S -> S - A---------------------" << endl;
+                    printAttrbuteTable(pro[0]);
+                    midCodeOut.push_back({pro[0].value, pro[1].value,"-",pro[3].value});
+                    printAttrbuteTable(pro[2]);
+                    midCode << pro[0].value << " = " << pro[1].value << "-" << pro[3].value << endl;
                     return true;
                 } else if (pro[2].symbol == "compOp") {
                     // S -> S compOp A;
@@ -371,19 +398,35 @@ bool Grammar_Analyzer::translate(deque<attributeTable> &pro) {
             case 4:
                 if (pro[2].symbol == "*") {
                     // A -> A * B
-                    cout << pro[0].value << " = " << pro[1].value << " * " << pro[3].value << endl;
-                    pro[0].intVal = pro[1].intVal * pro[3].intVal;
+//                    cout << pro[0].value << " = " << pro[1].value << " * " << pro[3].value << endl;
+                    pro[0].intVal = sysMap[pro[1].value].intVal * sysMap[pro[3].value].intVal;
                     pro[0].type = pro[1].type;
+                    sysMap[pro[0].value] = pro[0];
+                    cout << "-------------------A -> A * B---------------------" << endl;
+                    printAttrbuteTable(pro[0]);
+                    midCodeOut.push_back({pro[0].value, pro[1].value,"*",pro[3].value});
+                    midCode << pro[0].value << " = " << pro[1].value << " * " << pro[3].value << endl;
                     return true;
                 } else if (pro[2].symbol == "/") {
                     // A -> A / B
-                    cout << pro[0].value << " = " << pro[1].value << " / " << pro[3].value << endl;
-                    if(pro[3].intVal==0){
-                        cout<<"divided by zero"<<endl;
+                    cout << "-------------------A -> A / B---------------------" << endl;
+                    cout << "A :" << endl;
+                    printAttrbuteTable(pro[1]);
+                    printAttrbuteTable(sysMap[pro[1].value]);
+                    cout << "B :" << endl;
+                    printAttrbuteTable(pro[3]);
+                    printAttrbuteTable(sysMap[pro[3].value]);
+                    if (sysMap[pro[3].value].intVal == 0) {
+                        cout << "divided by zero" << endl;
                         exit(-2);
                     }
-                    pro[0].intVal = pro[1].intVal / pro[3].intVal;
+                    pro[0].intVal = sysMap[pro[1].value].intVal / sysMap[pro[3].value].intVal;
                     pro[0].type = pro[1].type;
+                    sysMap[pro[0].value] = pro[0];
+                    cout << "next A :" << endl;
+                    printAttrbuteTable(pro[0]);
+                    midCodeOut.push_back({pro[0].value, pro[1].value,"/",pro[3].value});
+                    midCode << pro[0].value << " = " << pro[1].value << " / " << pro[3].value << endl;
                     return true;
                 } else {
                     cout << "error" << endl;
@@ -407,8 +450,13 @@ bool Grammar_Analyzer::translate(deque<attributeTable> &pro) {
             case 2:
                 // A -> B;
                 pro[0].intVal = pro[1].intVal;
-                pro[0].value = pro[1].value;
+//                pro[0].value = pro[1].value;
                 pro[0].type = pro[1].type;
+                sysMap[pro[0].value] = pro[0];
+                cout << "-------------------A -> B---------------------" << endl;
+                printAttrbuteTable(pro[0]);
+                midCodeOut.push_back({pro[0].value,pro[1].value});
+                midCode << pro[0].value << " = " << pro[1].value << endl;
                 break;
             default:
                 cout << "error" << endl;
@@ -425,14 +473,24 @@ bool Grammar_Analyzer::translate(deque<attributeTable> &pro) {
             case 2:
                 if (pro[1].symbol == "token") {
                     // B -> token;
-                    pro[0].intVal = pro[1].intVal;
-                    pro[0].value = pro[1].value;
-                    pro[0].type = pro[1].type;
+                    pro[0].intVal = sysMap[pro[1].value].intVal;
+//                    pro[0].value = pro[1].value;
+                    pro[0].type = sysMap[pro[1].value].type;
+                    sysMap[pro[0].value] = pro[0];
+                    cout << "-------------------B -> token---------------------" << endl;
+                    printAttrbuteTable(pro[0]);
+                    printAttrbuteTable(sysMap[pro[1].value]);
+                    midCodeOut.push_back({pro[0].value,pro[1].value});
+                    midCode << pro[0].value << " = " << pro[1].value << endl;
                 } else if (pro[1].symbol == "constV") {
                     // B -> constV;
                     pro[0].intVal = pro[1].intVal;
-                    pro[0].value = pro[1].value;
                     pro[0].type = pro[1].type;
+                    sysMap[pro[0].value] = pro[0];
+                    cout << "-------------------B -> constV---------------------" << endl;
+                    printAttrbuteTable(pro[0]);
+                    midCodeOut.push_back({pro[0].value,pro[1].value});
+                    midCode << pro[0].value << " = " << pro[1].value << endl;
                 } else {
                     cout << "error" << endl;
                     exit(-1);
@@ -445,7 +503,7 @@ bool Grammar_Analyzer::translate(deque<attributeTable> &pro) {
                 if (pro[1].symbol == "token") {
                     // list -> token
                     pro[0].intVal = pro[1].intVal;
-                    pro[0].value = pro[1].value;
+//                    pro[0].value = pro[1].value;
                     pro[0].type = pro[1].type;
                 } else if (pro[1].symbol == " ") {
                     // list -> " "
@@ -466,12 +524,18 @@ bool Grammar_Analyzer::translate(deque<attributeTable> &pro) {
         if (pro[1].symbol == "int") {
             pro[1].type = MY_INT;
             pro[0].type = MY_INT;
+            cout << "-------------------type -> int---------------------" << endl;
+            sysMap[pro[0].value] = pro[0];
         } else if (pro[1].symbol == "char") {
             pro[1].type = MY_CHAR;
             pro[0].type = MY_CHAR;
+            cout << "-------------------type -> char---------------------" << endl;
+            sysMap[pro[0].value] = pro[0];
         } else if (pro[1].symbol == "void") {
             pro[1].type = MY_VOID;
             pro[0].type = MY_VOID;
+            cout << "-------------------type -> void---------------------" << endl;
+            sysMap[pro[0].value] = pro[0];
         } else {
             cout << "error" << endl;
             exit(-1);
@@ -499,15 +563,22 @@ bool Grammar_Analyzer::translate(deque<attributeTable> &pro) {
         if (pro[1].symbol == "S'") {
             // C -> S'
             pro[0].intVal = pro[1].intVal;
-            pro[0].value = pro[1].value;
+//            pro[0].value = pro[1].value;
             pro[0].type = pro[1].type;
+            sysMap[pro[0].value] = pro[0];
+            cout << "-------------------C -> S'---------------------" << endl;
+            printAttrbuteTable(pro[0]);
+//            midCodeOut.push_back({pro[0].value,pro[1].value});
+//            midCode << pro[0].value << " = " << pro[1].value << endl;
         } else if (pro[1].symbol == "C") {
             //C -> C # S'
+            cout << "-------------------C -> C # S'---------------------" << endl;
         } else {
             cout << "error" << endl;
             exit(-1);
         }
     }
+    midCode.close();
     return false;
 }
 
@@ -603,7 +674,7 @@ attributeTable::attributeTable(string symbol,
 
 
 void printProducerWithAttr(deque<attributeTable> producerWithAttr) {
-    cout<<endl;
+    cout << endl;
     for (int i = 0; i < producerWithAttr.size(); i++) {
         cout << "-----[" << i << "]-----" << endl;
         printAttrbuteTable(producerWithAttr[i]);
@@ -615,4 +686,19 @@ void printAttrbuteTable(attributeTable table) {
     cout << "value:\t" << table.value << endl;
     cout << "intValue:\t" << table.intVal << endl;
     cout << "type:\t" << table.type << endl;
+    cout << endl;
+
+}
+
+bool notEnd(string input,map<string, int> NoEndIndex){
+    map<string, int>::iterator iter;
+    iter = NoEndIndex.begin();
+    while(iter != NoEndIndex.end()){
+
+	    if(iter->first==input){
+	        return true;
+	    }
+	    iter++;
+	}
+    return false;
 }
