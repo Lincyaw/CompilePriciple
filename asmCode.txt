@@ -1,0 +1,15 @@
+Mov 400, R0
+Sub 2, R0
+Mul 10, R0
+Mov 12, R1
+Div 3, R1
+Mov R0, temp
+Sub R1, R0
+Mov R0, code
+Div 10, R0
+Mov temp, R2
+Mul R2, R0
+Mov R0, bing
+Add 2, R0
+Div 4, R0
+Mov R0, ans

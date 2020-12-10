@@ -123,16 +123,16 @@ void Grammar_Analyzer::LR1(vector<pair<int, attributeTable>> Input) {
         }
         producerOut.close();
         clearUselessProducer();
-    ofstream midCode;
-    midCode.open("../midCode.txt");
-    for (auto i:midCodeOut) {
-        midCode<<i[0]<<" = ";
-        for (int j = 1;j<i.size();j++) {
-            midCode << i[j] << " ";
+        ofstream midCode;
+        midCode.open("../midCode.txt");
+        for (auto i:midCodeOut) {
+            midCode << i[0] << " = ";
+            for (int j = 1; j < i.size(); j++) {
+                midCode << i[j] << " ";
+            }
+            midCode << endl;
         }
-        midCode << endl;
-    }
-    midCode.close();
+        midCode.close();
     }
 }
 
@@ -260,6 +260,9 @@ Grammar_Analyzer::Grammar_Analyzer() {
     initActionMap();
     initGotoMap();
     initNotEndIndex();
+    for (int i = 29; i >= 0; i--) {
+        regs.emplace_back(i);
+    }
 }
 
 /**
@@ -321,16 +324,12 @@ bool Grammar_Analyzer::translate(deque<attributeTable> &pro) {
                     cout << "-------------------S' -> token = S---------------------" << endl;
                     printAttrbuteTable(pro[1]);
                     midCodeOut.push_back({pro[1].value, pro[3].value});
-//                    midCode << pro[1].value << " = " << pro[3].value << endl;
                     return true;
-                    break;
                 case 7: // S' -> token [ constV ] = S;
                     exit(-1);
-                    break;
                 default:
                     cout << "error" << endl;
                     exit(-1);
-                    break;
             }
         } else if (pro[1].symbol == " ") {
             // S' ->  ;
@@ -660,13 +659,149 @@ bool Grammar_Analyzer::notEnd(const string &input, map<string, int> NoEndIndex) 
     map<string, int>::iterator iter;
     iter = NoEndIndex.begin();
     while (iter != NoEndIndex.end()) {
-
         if (iter->first == input) {
             return true;
         }
         iter++;
     }
     return false;
+}
+/**
+ * 将中间代码转换为汇编代码
+ */
+void Grammar_Analyzer::toAsm() {
+    ofstream asmGen("../asmCode.txt");
+    for (const auto &sentences:midCodeOut) {
+        if (sentences.size() == 2) {
+//            cout << sentences[0] << ", " <<  sentences[1]<< endl;
+            string reg;
+            if (valueToReg.find(sentences[1]) == valueToReg.end()) {
+                reg = getReg();
+                asmGen << "Mov " << sentences[1] << ", " << reg << endl;
+            } else {
+                reg = valueToReg[sentences[1]];
+                if (!notEnd(sentences[1], NoEndIndex)) {
+                    asmGen << "Mov " << valueToReg[sentences[1]] << ", " << sentences[1] << endl;
+                }
+            }
+            asmGen << "Mov " << valueToReg[sentences[1]] << ", " << sentences[0] << endl;
+        } else if (sentences[2] == "+") {
+            string reg;
+            // 如果没找到第一个参数的值在哪个寄存器,就申请一个寄存器存放
+            if (valueToReg.find(sentences[1]) == valueToReg.end()) {
+                reg = getReg();
+                asmGen << "Mov " << sentences[1] << ", " << reg << endl;
+            } else { // 如果找到了,就刚reg=那个值对应的寄存器
+                reg = valueToReg[sentences[1]];
+                // 如果这个值是终结符,则将该寄存器的值存回内存,以防下面的命令重复利用了这个寄存器,但是没有保存值
+                if (!notEnd(sentences[1], NoEndIndex)) {
+                    asmGen << "Mov " << reg << ", " << sentences[1] << endl;
+                }
+            }
+            // 如果没找到第二个的参数在哪个寄存器, 就把这个参数加到第一个参数所在的寄存器中
+            // 因为除了常数,不会有找不到寄存器在哪的.
+            if (valueToReg.find(sentences[3]) == valueToReg.end()) {
+                asmGen << "Add " << sentences[3] << ", " << reg << endl;
+            } else {
+                if(valueToReg[sentences[3]] == reg){
+                    // 如果等于,说明寄存器重复了. reg是刚刚取的,所以要为第二个参数申请一个新的寄存器
+                    valueToReg[sentences[3]] = getReg();
+                    asmGen << "Mov " << sentences[3] << ", " << valueToReg[sentences[3]] << endl;
+                }
+                asmGen << "Add " << valueToReg[sentences[3]] << ", " << reg << endl;
+            }
+            valueToReg[sentences[0]] = reg;
+        } else if (sentences[2] == "-") {
+            string reg;
+            if (valueToReg.find(sentences[1]) == valueToReg.end()) {
+                reg = getReg();
+                asmGen << "Mov " << sentences[1] << ", " << reg << endl;
+            } else {
+                reg = valueToReg[sentences[1]];
+                if (!notEnd(sentences[1], NoEndIndex)) {
+                    asmGen << "Mov " << valueToReg[sentences[1]] << ", " << sentences[1] << endl;
+                }
+            }
+            if (valueToReg.find(sentences[3]) == valueToReg.end()) {
+                asmGen << "Sub " << sentences[3] << ", " << reg << endl;
+            } else {
+                if(valueToReg[sentences[3]] == reg){
+                    // 如果等于,说明寄存器重复了. reg是刚刚取的,所以要为第二个参数申请一个新的寄存器
+                    valueToReg[sentences[3]] = getReg();
+                    asmGen << "Mov " << sentences[3] << ", " << valueToReg[sentences[3]] << endl;
+                }
+                asmGen << "Sub " << valueToReg[sentences[3]] << ", " << reg << endl;
+            }
+            valueToReg[sentences[0]] = reg;
+        } else if (sentences[2] == "*") {
+            string reg;
+            if (valueToReg.find(sentences[1]) == valueToReg.end()) {
+                reg = getReg();
+                asmGen << "Mov " << sentences[1] << ", " << reg << endl;
+            } else {
+                reg = valueToReg[sentences[1]];
+                if (!notEnd(sentences[1], NoEndIndex)) {
+                    asmGen << "Mov " << valueToReg[sentences[1]] << ", " << sentences[1] << endl;
+                }
+            }
+            if (valueToReg.find(sentences[3]) == valueToReg.end()) {
+                asmGen << "Mul " << sentences[3] << ", " << reg << endl;
+            } else {
+                if(valueToReg[sentences[3]] == reg){
+                    // 如果等于,说明寄存器重复了. reg是刚刚取的,所以要为第二个参数申请一个新的寄存器
+                    valueToReg[sentences[3]] = getReg();
+                    asmGen << "Mov " << sentences[3] << ", " << valueToReg[sentences[3]] << endl;
+                }
+                asmGen << "Mul " << valueToReg[sentences[3]] << ", " << reg << endl;
+            }
+            valueToReg[sentences[0]] = reg;
+        } else if (sentences[2] == "/") {
+            string reg;
+            if (valueToReg.find(sentences[1]) == valueToReg.end()) {
+                reg = getReg();
+                asmGen << "Mov " << sentences[1] << ", " << reg << endl;
+            } else {
+                reg = valueToReg[sentences[1]];
+                if (!notEnd(sentences[1], NoEndIndex)) {
+                    asmGen << "Mov " << valueToReg[sentences[1]] << ", " << sentences[1] << endl;
+                }
+            }
+            if (valueToReg.find(sentences[3]) == valueToReg.end()) {
+                asmGen << "Div " << sentences[3] << ", " << reg << endl;
+            } else {
+                if(valueToReg[sentences[3]] == reg){
+                    // 如果等于,说明寄存器重复了. reg是刚刚取的,所以要为第二个参数申请一个新的寄存器
+                    valueToReg[sentences[3]] = getReg();
+                    asmGen << "Mov " << sentences[3] << ", " << valueToReg[sentences[3]] << endl;
+                }
+                asmGen << "Div " << valueToReg[sentences[3]] << ", " << reg << endl;
+            }
+            valueToReg[sentences[0]] = reg;
+        } else {
+            cout << "error" << endl;
+            exit(-2);
+        }
+    }
+//    auto iter = valueToReg.begin();
+//    while (iter != valueToReg.end()) {
+//        if (!notEnd(iter->first,NoEndIndex)) {
+//            cout<<"Set "<<iter->second<<", "<<iter->first<<endl;
+//        }
+//        iter++;
+//    }
+    if (!notEnd(midCodeOut.back()[0], NoEndIndex) && midCodeOut.back().size()>2) {
+        asmGen << "Mov " << valueToReg[midCodeOut.back()[0]] << ", " << midCodeOut.back()[0] << endl;
+    }
+}
+/**
+ * 以时间片轮转的方式获取一个寄存器
+ * @return
+ */
+string Grammar_Analyzer::getReg() {
+    int ans = regs.back();
+    regs.pop_back();
+    regs.push_front(ans);
+    return "R" + to_string(ans);
 }
 
 /**
@@ -749,7 +884,7 @@ void testParseProducer() {
 void printAttrbuteTable(const attributeTable &table) {
     cout << "symbol:\t" << table.symbol << endl;
     cout << "value:\t" << table.value << endl;
-    cout << "intValue:\t" << table.intVal << endl;
+    cout << "intValue:" << table.intVal << endl;
     cout << "type:\t" << table.type << endl;
     cout << endl;
 }

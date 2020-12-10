@@ -1,4 +1,4 @@
-f = 10+2*4#
-c = f-2#
-d = c/10#
-a = 10*d+3
+temp = (400-2)*10#
+code = temp-12/3#
+bing = (code/10)*temp#
+ans = (bing+2)/4

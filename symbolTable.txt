@@ -1,0 +1,25 @@
+symbol:	
+value:	
+intValue:0
+type:	0
+
+symbol:	token
+value:	ans
+intValue:400000
+type:	0
+
+symbol:	token
+value:	bing
+intValue:1600000
+type:	0
+
+symbol:	token
+value:	code
+intValue:4000
+type:	0
+
+symbol:	token
+value:	temp
+intValue:4000
+type:	0
+

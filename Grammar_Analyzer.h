@@ -13,8 +13,10 @@ enum week {MY_INT, MY_CHAR, MY_VOID};
 class Grammar_Analyzer {
 public:
     Grammar_Analyzer();
+    deque<int> regs;
     map<string, int> index;
     map<string, int> NoEndIndex;
+    map<string,string> valueToReg;
     vector<vector<string>> midCodeOut;
     //句子指针
     int pointer{};
@@ -40,6 +42,11 @@ public:
     static string switcher(pair<int, attributeTable> &input);
     void clearUselessProducer();
     static bool notEnd(const string& input,map<string, int> NoEndIndex);
+
+
+    // 翻译成汇编
+    void toAsm();
+    string getReg();
 };
 void printAttrbuteTable(const attributeTable& table);
 void testParseState();

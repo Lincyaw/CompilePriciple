@@ -1,6 +1,8 @@
-A = 2 * 4 
-f = 10 + A 
-c = f - 2 
-d = c / 10 
-A = 10 * d 
-a = 3 + A 
+S = 400 - 2 
+temp = S * 10 
+A = 12 / 3 
+code = temp - A 
+A = code / 10 
+bing = A * temp 
+S = bing + 2 
+ans = S / 4 
